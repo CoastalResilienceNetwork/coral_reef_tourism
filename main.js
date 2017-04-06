@@ -12,7 +12,7 @@ define([
 	) {
 
 		return declare(PluginBase, {
-			toolbarName: 'Coral Reef Tourism',
+			toolbarName: 'Recreation & Tourism',
 			resizable: false,
 			width: 425,
 			size: 'custom',
