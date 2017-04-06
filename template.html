@@ -83,6 +83,10 @@
 		background-color: #dddddd;
 	}
 
+	.stats .stat.non-interactive .stat-info {
+		display: none;
+	}
+
 	.stats .stat-info .fa-info-circle {
 		color: #fff;
 	    position: absolute;
@@ -103,6 +107,10 @@
 	    text-align: center;
 	}
 
+	.stats .stat.non-interactive .number {
+		font-size: 21px;
+	}
+
 	.stats .stat.active .number {
 		color: #03a0da;
 	}
@@ -115,8 +123,16 @@
 	    text-align: center;
 	}
 
+	.stats .stat.non-interactive .description {
+		font-size: 14px;
+	}
+
 	.stats .stat.active .description {
 		color: #03a0da;
+	}
+
+	.units {
+		font-size: 80%;
 	}
 
 	/* End Stats */
@@ -187,7 +203,7 @@
 			<span class="fa fa-info-circle"></span>
 		</div>
 		<div class="number">
-			<span class="value">1,051</span>km<sup>2</sup> (89%)
+			<span class="value">1,051</span> <span class="units">km<sup>2</sup></span> (89%)
 		</div>
 		<div class="description">Reefs used for tourism</div>
 	</div>
@@ -197,9 +213,9 @@
 			<span class="fa fa-info-circle"></span>
 		</div>
 		<div class="number">
-			><span class="value">3,168,000</span> per km<sup>2</sup> per year
+			><span class="value">3,168,000</span> per <span class="units">km<sup>2</sup></span> per year
 		</div>
-		<div class="description">Higest value reefs (top 10%) generate</div>
+		<div class="description">Highest value reefs (top 10%) generate</div>
 	</div>
 
 	<div class="stat inland-wetlands non-interactive">
@@ -207,7 +223,7 @@
 			<span class="fa fa-info-circle"></span>
 		</div>
 		<div class="number">
-			<span class="value">1,185</span>km<sup>2</sup>
+			<span class="value">1,185</span> <span class="units">km<sup>2</sup></span>
 		</div>
 		<div class="description">Total reef area</div>
 	</div>
@@ -228,6 +244,7 @@
 	Chart placeholder
 </div>
 
+<!--
 <div class="additional-layers">
 	<label class="form-component">
 		<input type="checkbox">
@@ -235,4 +252,4 @@
 		<span class="form-text">Modelled total visitation value of coral reefs (per km<sup>2</sup>)</span>
 	</label>
 </div>
-
+-->

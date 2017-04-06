@@ -26,7 +26,7 @@ define([
 				this.$el.find('.stat').not('.non-interactive').on('click', function(e) {
 					$('.stats .stat.active').removeClass('active');
 					$(e.currentTarget).addClass('active');
-				})
+				});
 			},
 
 			activate: function() {
