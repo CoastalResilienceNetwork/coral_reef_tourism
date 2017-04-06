@@ -1,0 +1,238 @@
+<style>
+
+	/* TODO: integrate to master styleguide.css */
+	.chosen-container-single .chosen-single span {
+		width: calc(100% - 19px);
+	}
+
+	.sidebar-content {
+		display: flex;
+		flex-direction: row;
+		flex: 1;
+		flex-wrap: wrap;
+		height: 760px;
+	}
+
+	.intro,
+	.stats,
+	.chart,
+	.additional-layers {
+		display: flex;
+	 	flex-direction: column;
+		padding: 5px 17px;
+		width: 100%;
+	}
+
+	.select-controls {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+
+	.select-controls .left-side,
+	.select-controls .right-side {
+		width: 50%;
+	}
+
+	.select-controls .left-side {
+		padding: 5px 5px 5px 17px;
+		background-color: #f5f5f5;
+	}
+
+	.select-controls .right-side {
+		background-color: #e7e7e7;
+		padding: 5px 17px 5px 5px;
+	}
+
+	/* Stats */
+
+	.stats {
+		background-color: #f5f5f5;
+		flex-wrap: wrap;
+		flex-direction: row;
+		padding-right: 9px;
+
+
+	}
+
+	.stats .stat {
+		position: relative;
+		background-color: #fff;
+		color: #ccc;
+		margin: 5px 0;
+		width: 100%;
+		height: 60px;
+		cursor: pointer;
+		white-space: nowrap;
+   		margin-right: 8px;
+
+   		overflow: hidden;
+	}
+
+	.stats .stat.non-interactive {
+		width: 183px;
+		color: #5d6165;
+		cursor: default;
+	}
+
+	.stats .stat-info {
+		width: 20px;
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+		background-color: #dddddd;
+	}
+
+	.stats .stat-info .fa-info-circle {
+		color: #fff;
+	    position: absolute;
+	    top: 23px;
+	    left: 4px;
+	}
+
+	.stats .stat.active .stat-info {
+		background-color: #03a0da;
+	}
+
+	.stats .number {
+    	display: block;
+	    font-size: 24px;
+	    line-height: 30px;
+	    width: 100%;
+	    padding-top: 3px;
+	    text-align: center;
+	}
+
+	.stats .stat.active .number {
+		color: #03a0da;
+	}
+
+	.stats .description {
+		display: block;
+	    line-height: 21px;
+	    font-size: 16px;
+	    width: 100%;
+	    text-align: center;
+	}
+
+	.stats .stat.active .description {
+		color: #03a0da;
+	}
+
+	/* End Stats */
+
+	.chart {
+		height: 285px;
+		text-align: center;
+    	padding-top: 33%;
+	}
+
+</style>
+
+<div class="intro">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non finibus massa. Nulla lectus felis, fringilla non dolor ut, elementum lobortis nibh. Cras sollicitudin metus.
+</div>
+
+<div class="select-controls">
+	<div class="left-side">
+		Choose region to explore:
+		<div class="chosen-wrap">
+			<select id="chosenRegion" class="chosen">
+				<option></option>
+				<option value="global" selected>Global</option>
+				<option>Florida</option>
+				<option>Bahamas</option>
+				<option>Mariana Islands</option>
+				<option>Anguilla</option>
+				<option>Guadeloupe (Inc. St Martin and St Bart's)</option>
+				<option>Sint Maarten</option>
+				<option>Antigua and Barbuda</option>
+				<option>Saba</option>
+				<option>Sint Eustatius</option>
+				<option>St Kitts and Nevis</option>
+				<option>Montserrat</option>
+				<option>Dominica</option>
+				<option>Martinique</option>
+				<option>Marshall Islands</option>
+				<option>St Lucia</option>
+				<option>Guam</option>
+				<option>Barbados</option>
+				<option>St Vincent and the Grenadines</option>
+				<option>Grenada</option>
+				<option>Federated States of Micronesia</option>
+				<option>Palau</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="right-side">
+
+	</div>
+</div>
+
+<div class="stats">
+
+	<div class="stat active coral-reef-value">
+		<div class="stat-info">
+			<span class="fa fa-info-circle"></span>
+		</div>
+		<div class="number">
+			$<span class="value">1,152,313,000</span>
+		</div>
+		<div class="description">Value of coral reefs</div>
+	</div>
+
+	<div class="stat roadcrossing-potential">
+		<div class="stat-info">
+			<span class="fa fa-info-circle"></span>
+		</div>
+		<div class="number">
+			<span class="value">1,051</span>km<sup>2</sup> (89%)
+		</div>
+		<div class="description">Reefs used for tourism</div>
+	</div>
+
+	<div class="stat inland-wetlands">
+		<div class="stat-info">
+			<span class="fa fa-info-circle"></span>
+		</div>
+		<div class="number">
+			><span class="value">3,168,000</span> per km<sup>2</sup> per year
+		</div>
+		<div class="description">Higest value reefs (top 10%) generate</div>
+	</div>
+
+	<div class="stat inland-wetlands non-interactive">
+		<div class="stat-info">
+			<span class="fa fa-info-circle"></span>
+		</div>
+		<div class="number">
+			<span class="value">1,185</span>km<sup>2</sup>
+		</div>
+		<div class="description">Total reef area</div>
+	</div>
+
+	<div class="stat inland-wetlands non-interactive">
+		<div class="stat-info">
+			<span class="fa fa-info-circle"></span>
+		</div>
+		<div class="number">
+			<span class="value">4,800</span>
+		</div>
+		<div class="description">Total Visitation</div>
+	</div>
+
+</div>
+
+<div class="chart">
+	Chart placeholder
+</div>
+
+<div class="additional-layers">
+	<label class="form-component">
+		<input type="checkbox">
+		<div class="check"></div>
+		<span class="form-text">Modelled total visitation value of coral reefs (per km<sup>2</sup>)</span>
+	</label>
+</div>
+
