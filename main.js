@@ -47,8 +47,21 @@ define([
 				this.$el.find('.stat').not('.non-interactive').on('click', function(e) {
 					$('.stats .stat.active').removeClass('active');
 					$(e.currentTarget).addClass('active');
-					self.layerGlobal.setVisibleLayers([$(e.currentTarget).data('layer')])
+					self.layerGlobal.setVisibleLayers([$(e.currentTarget).data('layer')]);
 				});
+
+				this.$el.find('#chosenRegion').on('change', function(e) {
+					//self.zoomToRegion(e.target.value);
+					var region = e.target.value.toUpperCase()
+
+					if (region === "GLOBAL") {
+						self.$el.find('.stats .header .region-label').html('the World');
+					} else {
+						self.$el.find('.stats .header .region-label').html(region);
+					}
+
+				});
+
 			},
 
 			activate: function() {

@@ -14,12 +14,12 @@
 	    z-index: 2600;
 	}
 
-	.sidebar-content {
+	.sidebar-content .tour-rec {
 		display: flex;
 		flex-direction: row;
 		flex: 1;
 		flex-wrap: wrap;
-		height: 680px;
+		height: 700px;
 	}
 
 	.intro,
@@ -159,111 +159,113 @@
 
 </style>
 
-<div class="intro">
-	Zoom on the map for high resolution maps for every coral reef nation in the world.
+<div class="tour-rec">
+	<div class="intro">
+		Zoom on the map for high resolution maps for every coral reef nation in the world.
+	</div>
+
+	<div class="select-controls">
+		<div class="left-side">
+			Choose region to explore:
+			<div class="chosen-wrap">
+				<select id="chosenRegion" class="chosen">
+					<option></option>
+					<option value="global" selected>Global</option>
+					<option>Florida</option>
+					<option>Bahamas</option>
+					<option>Mariana Islands</option>
+					<option>Anguilla</option>
+					<option>Guadeloupe (Inc. St Martin and St Bart's)</option>
+					<option>Sint Maarten</option>
+					<option>Antigua and Barbuda</option>
+					<option>Saba</option>
+					<option>Sint Eustatius</option>
+					<option>St Kitts and Nevis</option>
+					<option>Montserrat</option>
+					<option>Dominica</option>
+					<option>Martinique</option>
+					<option>Marshall Islands</option>
+					<option>St Lucia</option>
+					<option>Guam</option>
+					<option>Barbados</option>
+					<option>St Vincent and the Grenadines</option>
+					<option>Grenada</option>
+					<option>Federated States of Micronesia</option>
+					<option>Palau</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="right-side">
+
+		</div>
+	</div>
+
+	<div class="stats">
+		<div class="header">Quick Stats for <span class="region-label">the World</span></div>
+		<div class="stat active" data-layer=1>
+			<div class="stat-info">
+				<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
+			</div>
+			<div class="number">
+				$<span class="value">1,152,313,000</span>
+			</div>
+			<div class="description">Value of coral reefs</div>
+		</div>
+
+		<div class="stat" data-layer=3>
+			<div class="stat-info">
+				<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
+			</div>
+			<div class="number">
+				<span class="value">1,051</span> <span class="units">km<sup>2</sup></span> (89%)
+			</div>
+			<div class="description">Reefs used for tourism</div>
+		</div>
+
+		<div class="stat" data-layer=2>
+			<div class="stat-info">
+				<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
+			</div>
+			<div class="number">
+				><span class="value">3,168,000</span> <span class="units">per km<sup>2</sup> per year</span>
+			</div>
+			<div class="description">Highest value reefs (top 10%) generate</div>
+		</div>
+
+		<div class="stat non-interactive">
+			<div class="stat-info">
+				<span class="fa fa-info-circle"></span>
+			</div>
+			<div class="number">
+				<span class="value">1,185</span> <span class="units">km<sup>2</sup></span>
+			</div>
+			<div class="description">Total reef area</div>
+		</div>
+
+		<div class="stat non-interactive">
+			<div class="stat-info">
+				<span class="fa fa-info-circle"></span>
+			</div>
+			<div class="number">
+				<span class="value">4,800</span>
+			</div>
+			<div class="description">Total Visitation</div>
+		</div>
+
+	</div>
+
+	<div class="chart">
+
+	</div>
+
+	<!--
+	<div class="additional-layers">
+		<label class="form-component">
+			<input type="checkbox">
+			<div class="check"></div>
+			<span class="form-text">Modelled total visitation value of coral reefs (per km<sup>2</sup>)</span>
+		</label>
+	</div>
+	-->
 </div>
-
-<div class="select-controls">
-	<div class="left-side">
-		Choose region to explore:
-		<div class="chosen-wrap">
-			<select id="chosenRegion" class="chosen">
-				<option></option>
-				<option value="global" selected>Global</option>
-				<option>Florida</option>
-				<option>Bahamas</option>
-				<option>Mariana Islands</option>
-				<option>Anguilla</option>
-				<option>Guadeloupe (Inc. St Martin and St Bart's)</option>
-				<option>Sint Maarten</option>
-				<option>Antigua and Barbuda</option>
-				<option>Saba</option>
-				<option>Sint Eustatius</option>
-				<option>St Kitts and Nevis</option>
-				<option>Montserrat</option>
-				<option>Dominica</option>
-				<option>Martinique</option>
-				<option>Marshall Islands</option>
-				<option>St Lucia</option>
-				<option>Guam</option>
-				<option>Barbados</option>
-				<option>St Vincent and the Grenadines</option>
-				<option>Grenada</option>
-				<option>Federated States of Micronesia</option>
-				<option>Palau</option>
-			</select>
-		</div>
-	</div>
-
-	<div class="right-side">
-
-	</div>
-</div>
-
-<div class="stats">
-	<div class="header">Quick Stats</div>
-	<div class="stat active" data-layer=1>
-		<div class="stat-info">
-			<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
-		</div>
-		<div class="number">
-			$<span class="value">1,152,313,000</span>
-		</div>
-		<div class="description">Value of coral reefs</div>
-	</div>
-
-	<div class="stat" data-layer=3>
-		<div class="stat-info">
-			<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
-		</div>
-		<div class="number">
-			<span class="value">1,051</span> <span class="units">km<sup>2</sup></span> (89%)
-		</div>
-		<div class="description">Reefs used for tourism</div>
-	</div>
-
-	<div class="stat" data-layer=2>
-		<div class="stat-info">
-			<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
-		</div>
-		<div class="number">
-			><span class="value">3,168,000</span> <span class="units">per km<sup>2</sup> per year</span>
-		</div>
-		<div class="description">Highest value reefs (top 10%) generate</div>
-	</div>
-
-	<div class="stat non-interactive">
-		<div class="stat-info">
-			<span class="fa fa-info-circle"></span>
-		</div>
-		<div class="number">
-			<span class="value">1,185</span> <span class="units">km<sup>2</sup></span>
-		</div>
-		<div class="description">Total reef area</div>
-	</div>
-
-	<div class="stat non-interactive">
-		<div class="stat-info">
-			<span class="fa fa-info-circle"></span>
-		</div>
-		<div class="number">
-			<span class="value">4,800</span>
-		</div>
-		<div class="description">Total Visitation</div>
-	</div>
-
-</div>
-
-<div class="chart">
-
-</div>
-
-<!--
-<div class="additional-layers">
-	<label class="form-component">
-		<input type="checkbox">
-		<div class="check"></div>
-		<span class="form-text">Modelled total visitation value of coral reefs (per km<sup>2</sup>)</span>
-	</label>
-</div>
--->

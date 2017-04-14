@@ -1,19 +1,194 @@
 {
-	"Global": {
-
-	},
-	"Anguilla": {
-		"tourism": {
-			"sq_km": 55.75,
-			"no_cells": 223
-		}
-	},
-
-	"Antigua and Barbuda": {
-		"tourism": {
-			"sq_km": 0,
-			"no_cells": 0
-		}
-	}
-
+  "GLOBAL": {
+    "reef_value": 1427576000,
+    "higest_value_reefs": 74468000,
+    "reefs_used_dollar": 4996.5,
+    "reefs_used_percent": 0.34191837,
+    "onreef_value": 492336000,
+    "adjacent_value": 536478000
+  },
+  "EASTERN CARIBBEAN": {
+    "reef_value": 439604000,
+    "higest_value_reefs": 400000,
+    "reefs_used_dollar": 1225,
+    "reefs_used_percent": 0.06877386,
+    "onreef_value": 124876000,
+    "adjacent_value": 204083000
+  },
+  "MICRONESIA": {
+    "reef_value": 274184000,
+    "higest_value_reefs": 720000,
+    "reefs_used_dollar": 1273.25,
+    "reefs_used_percent": 0.071482708,
+    "onreef_value": 121292000,
+    "adjacent_value": 64156000
+  },
+  "ANGUILLA": {
+    "reef_value": 10281000,
+    "higest_value_reefs": 648000,
+    "reefs_used_dollar": 55.75,
+    "reefs_used_percent": 0.003129912,
+    "onreef_value": 2486000,
+    "adjacent_value": 4464000
+  },
+  "GUADELOUPE (INC. ST MARTIN AND ST BART'S)": {
+    "reef_value": 53029000,
+    "higest_value_reefs": 700000,
+    "reefs_used_dollar": 301.25,
+    "reefs_used_percent": 0.016912755,
+    "onreef_value": 12066000,
+    "adjacent_value": 24888000
+  },
+  "SINT MAARTEN": {
+    "reef_value": 83217000,
+    "higest_value_reefs": 74468000,
+    "reefs_used_dollar": 5.25,
+    "reefs_used_percent": 0.000294745,
+    "onreef_value": 30303000,
+    "adjacent_value": 40432000
+  },
+  "ANTIGUA AND BARBUDA": {
+    "reef_value": 39848000,
+    "higest_value_reefs": 1688000,
+    "reefs_used_dollar": 125,
+    "reefs_used_percent": 0.007017741,
+    "onreef_value": 7984000,
+    "adjacent_value": 23109000
+  },
+  "SABA": {
+    "reef_value": 191000,
+    "higest_value_reefs": 0,
+    "reefs_used_dollar": 55,
+    "reefs_used_percent": 0.003087806,
+    "onreef_value": 186000,
+    "adjacent_value": 3000
+  },
+  "SINT EUSTATIUS": {
+    "reef_value": 2676000,
+    "higest_value_reefs": 588000,
+    "reefs_used_dollar": 14.25,
+    "reefs_used_percent": 0.000800022,
+    "onreef_value": 2074000,
+    "adjacent_value": 176000
+  },
+  "ST KITTS AND NEVIS": {
+    "reef_value": 7990000,
+    "higest_value_reefs": 400000,
+    "reefs_used_dollar": 91.25,
+    "reefs_used_percent": 0.005122951,
+    "onreef_value": 2261000,
+    "adjacent_value": 3236000
+  },
+  "MONTSERRAT": {
+    "reef_value": 598000,
+    "higest_value_reefs": 0,
+    "reefs_used_dollar": 8.25,
+    "reefs_used_percent": 0.000463171,
+    "onreef_value": 347000,
+    "adjacent_value": 208000
+  },
+  "DOMINICA": {
+    "reef_value": 15195000,
+    "higest_value_reefs": 1436000,
+    "reefs_used_dollar": 52.75,
+    "reefs_used_percent": 0.002961487,
+    "onreef_value": 7452000,
+    "adjacent_value": 3712000
+  },
+  "MARTINIQUE": {
+    "reef_value": 46567000,
+    "higest_value_reefs": 1300000,
+    "reefs_used_dollar": 168.5,
+    "reefs_used_percent": 0.009459915,
+    "onreef_value": 11967000,
+    "adjacent_value": 24523000
+  },
+  "ST LUCIA": {
+    "reef_value": 32315000,
+    "higest_value_reefs": 2176000,
+    "reefs_used_dollar": 66,
+    "reefs_used_percent": 0.003705367,
+    "onreef_value": 6827000,
+    "adjacent_value": 17983000
+  },
+  "BARBADOS": {
+    "reef_value": 123074000,
+    "higest_value_reefs": 7828000,
+    "reefs_used_dollar": 64.75,
+    "reefs_used_percent": 0.00363519,
+    "onreef_value": 30898000,
+    "adjacent_value": 53990000
+  },
+  "ST VINCENT AND THE GRENADINES": {
+    "reef_value": 11389000,
+    "higest_value_reefs": 480000,
+    "reefs_used_dollar": 88.75,
+    "reefs_used_percent": 0.004982596,
+    "onreef_value": 4234000,
+    "adjacent_value": 3327000
+  },
+  "GRENADA": {
+    "reef_value": 13234000,
+    "higest_value_reefs": 564000,
+    "reefs_used_dollar": 128.25,
+    "reefs_used_percent": 0.007200202,
+    "onreef_value": 5791000,
+    "adjacent_value": 4032000
+  },
+  "MARIANA ISLANDS": {
+    "reef_value": 30562000,
+    "higest_value_reefs": 1020000,
+    "reefs_used_dollar": 186,
+    "reefs_used_percent": 0.010442398,
+    "onreef_value": 13663000,
+    "adjacent_value": 5592000
+  },
+  "MARSHALL ISLANDS": {
+    "reef_value": 31000,
+    "higest_value_reefs": 0,
+    "reefs_used_dollar": 43.5,
+    "reefs_used_percent": 0.002442174,
+    "onreef_value": 27000,
+    "adjacent_value": 4000
+  },
+  "GUAM": {
+    "reef_value": 192979000,
+    "higest_value_reefs": 9960000,
+    "reefs_used_dollar": 121.25,
+    "reefs_used_percent": 0.006807209,
+    "onreef_value": 74997000,
+    "adjacent_value": 55064000
+  },
+  "FEDERATED STATES OF MICRONESIA": {
+    "reef_value": 3871000,
+    "higest_value_reefs": 0,
+    "reefs_used_dollar": 504.25,
+    "reefs_used_percent": 0.028309567,
+    "onreef_value": 3498000,
+    "adjacent_value": 67000
+  },
+  "PALAU": {
+    "reef_value": 46741000,
+    "higest_value_reefs": 720000,
+    "reefs_used_dollar": 418.25,
+    "reefs_used_percent": 0.023481361,
+    "onreef_value": 29107000,
+    "adjacent_value": 3429000
+  },
+  "FLORIDA": {
+    "reef_value": 674806000,
+    "higest_value_reefs": 3340000,
+    "reefs_used_dollar": 1284,
+    "reefs_used_percent": 0.072086234,
+    "onreef_value": 82843000,
+    "adjacent_value": 293045000
+  },
+  "BAHAMAS": {
+    "reef_value": 233499000,
+    "higest_value_reefs": 496000,
+    "reefs_used_dollar": 3046.75,
+    "reefs_used_percent": 0.171050415,
+    "onreef_value": 77841000,
+    "adjacent_value": 72547000
+  }
 }
