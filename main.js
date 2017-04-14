@@ -14,6 +14,7 @@ define([
 	"d3",
 	"framework/PluginBase",
 	"dijit/layout/ContentPane",
+	"esri/layers/ArcGISDynamicMapServiceLayer",
     "dojo/dom",
     "dojo/text!./stats.json",
     "dojo/text!./template.html",
@@ -21,6 +22,7 @@ define([
 		d3,
 		PluginBase,
 		ContentPane,
+		ArcGISDynamicMapServiceLayer,
 		dom,
 		Stats,
 		template
@@ -41,9 +43,11 @@ define([
 			},
 
 			bindEvents: function() {
+				var self = this;
 				this.$el.find('.stat').not('.non-interactive').on('click', function(e) {
 					$('.stats .stat.active').removeClass('active');
 					$(e.currentTarget).addClass('active');
+					self.layerGlobal.setVisibleLayers([$(e.currentTarget).data('layer')])
 				});
 			},
 
@@ -52,6 +56,16 @@ define([
 
 				// Adjust toolbar title position to make room for image button
 				$('.sidebar-nav .nav-title').css("margin-left", "25px");
+
+				if (!this.layerGlobal) {
+					this.layerGlobal = new ArcGISDynamicMapServiceLayer("http://dev.services2.coastalresilience.org/arcgis/rest/services/OceanWealth/Recreation_and_Tourism/MapServer", {
+						id: 'global'
+					});
+					this.layerGlobal.setVisibleLayers([1]);
+					this.map.addLayer(this.layerGlobal);
+				} else {
+					this.layerGlobal.setVisibleLayers([1]);
+				}
 			},
 
 			deactivate: function() {
