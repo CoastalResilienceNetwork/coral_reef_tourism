@@ -1,0 +1,19 @@
+{
+	"Global": {
+
+	},
+	"Anguilla": {
+		"tourism": {
+			"sq_km": 55.75,
+			"no_cells": 223
+		}
+	},
+
+	"Antigua and Barbuda": {
+		"tourism": {
+			"sq_km": 0,
+			"no_cells": 0
+		}
+	}
+
+}
