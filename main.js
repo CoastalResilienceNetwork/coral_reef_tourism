@@ -31,10 +31,15 @@ define([
 
 			activate: function() {
 				this.render();
+
+				// Adjust toolbar title position to make room for image button
+				$('.sidebar-nav .nav-title').css("margin-left", "25px");
 			},
 
 			deactivate: function() {
 
+				// Reset toolbar title positioning
+				$('.sidebar-nav .nav-title').css("margin-left", "0px");
 			},
 
 			hibernate: function() {
@@ -50,6 +55,17 @@ define([
                 	disable_search_threshold: 20,
                 	width: '100%'
                 });
+
+                $(this.container).parent().append('<button id="viewCrsInfoGraphicIcon" class="button button-default ig-icon"><img src="plugins/recreation-tourism/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>');
+				$(this.container).parent().find("#viewCrsInfoGraphicIcon").on('click',function(c){
+					TINY.box.show({
+						animate: true,
+						url: 'plugins/recreation-tourism/infographic.html',
+						fixed: true,
+						width: 825,
+						height: 638
+					});
+				});
 
                 this.bindEvents();
 			}
