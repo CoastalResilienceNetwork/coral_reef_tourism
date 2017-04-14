@@ -52,13 +52,18 @@ define([
 
 				this.$el.find('#chosenRegion').on('change', function(e) {
 					//self.zoomToRegion(e.target.value);
-					var region = e.target.value.toUpperCase()
+					var region = e.target.value.toUpperCase();
 
 					if (region === "GLOBAL") {
 						self.$el.find('.stats .header .region-label').html('the World');
 					} else {
 						self.$el.find('.stats .header .region-label').html(region);
 					}
+
+					self.$el.find('.stat.reef_value .number .value').html(self.addCommas(self.stats[region].reef_value));
+					self.$el.find('.stat.reef_area_tourism .number .value').html(self.addCommas(self.stats[region].reefs_area));
+					self.$el.find('.stat.reef_area_tourism .number .percentage').html((self.stats[region].reefs_used_percent * 100).toFixed(1));
+					
 
 				});
 
@@ -128,6 +133,19 @@ define([
 	                .append("g")
 	                    .attr("transform", "translate(" + 20 + "," + 20 + ")");
 
+			},
+
+			// http://stackoverflow.com/questions/2646385/add-a-thousands-separator-to-a-total-with-javascript-or-jquery
+			addCommas: function(nStr) {
+			    nStr += '';
+			    var x = nStr.split('.');
+			    var x1 = x[0];
+			    var x2 = x.length > 1 ? '.' + x[1] : '';
+			    var rgx = /(\d+)(\d{3})/;
+			    while (rgx.test(x1)) {
+			        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			    }
+			    return x1 + x2;
 			}
 
 		});
