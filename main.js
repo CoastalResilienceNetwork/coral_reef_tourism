@@ -188,6 +188,16 @@ define([
                     .attr("text-anchor", "middle")
                     .text("Thousands USD");
 
+                g.selectAll(".bar-label")
+                	.data(data)
+                	.enter().append("text")
+                	.text(function(d) {
+                		return '$' + self.addCommas(d.y) + ' (' + d.per + '%)';
+                	})
+                	.attr('class', 'bar-label')
+                	.attr("x", function(d) { return x(d.x); })
+                	.attr("y", function(d) { return y(d.y) - 5; });
+
   				g.selectAll(".bar")
 				    .data(data)
 				    .enter().append("rect")
@@ -202,102 +212,43 @@ define([
 						.attr("width", x.rangeBand())
 						.attr("height", function(d) { return height - y(d.y); });
 
-				$('.chart rect.bar').tooltip({
+				/*$('.chart rect.bar').tooltip({
 					track: true
-				});
+				});*/
 
-
-/*
-	                .append("g")
-	                    .attr("transform", "translate(" + this.chart.margin.left + "," + this.chart.margin.right + ")");
-/*
-	            this.chart.x = d3.scale.ordinal()
-                    .domain(["On Reef", "Adjacent Reef"])
-                    .rangeRoundBands([0, this.chart.width], 0.15);
-
-                this.chart.y = d3.scale.linear()
-                    .range([this.chart.height, 0])
-                    .domain([0, 6000000000]);
-
-                this.chart.xAxis = d3.svg.axis()
-                    .scale(this.chart.x)
-                    .orient("bottom");
-
-                this.chart.yAxis = d3.svg.axis()
-                    .scale(this.chart.y)
-                    .orient("left").ticks(5);
-
-
-                // Add a chart background object that can be styled separately
-                /*this.chart.svg.append("rect")
-                    .attr("class", "chart-area")
-                    .attr("width", 300)
-                    .attr("height", 215)
-                    .attr("fill", "#f6f6f6");
-*/
-                // Add the xaxis
- /*               this.chart.svg.append("g")
-                    .attr("opacity", 1)
-                    .attr("class", "xaxis")
-                    .attr("transform", "translate(0," + (this.chart.height - this.chart.margin.bottom) + ")")
-                    .call(this.chart.xAxis);
-
-                // Add the x-axis label
-                this.chart.svg.append("text")
-                    .attr("class", "xaxis-label")
-                    .attr("opacity", 0)
-                    .attr("text-anchor", "middle")
-                    .attr("transform", "translate(" + (175) + "," + (215) + ")")
-                    .text("Reefs used for Tourism");
-
-                // Add the y-axis label
-                this.chart.svg.append("text")
-                    .attr("class", "yaxis-label")
-                    .attr("transform", "rotate(-90)")
-                    .attr("y", 0 - 50)
-                    .attr("x", 0 - (115))
-                    .attr("text-anchor", "middle")
-                    .text("Reef Value");
-
-                this.chart.svg.append("g")
-                    .attr("class", "yaxis")
-                    .call(this.chart.yAxis);
-
-                var data = [
-					{x: "On Reef", y: this.stats.Global.onreef_value},
-					{x: "Adjacent Reef", y: this.stats.Global.adjacent_value}
-				];
-
-                this.chart.svg.selectAll(".bar")
-                    .data(data)
-                    .enter().append("rect")
-                    .attr("opacity", 1)
-                    .attr("class", "bar info-tooltip")
-                    .transition().duration(1200).ease("sin-in-out")
-                    .attr("x", function(d) { return self.chart.x(d.x); })
-                    .attr("y", function(d) { return self.chart.y(d.y); })
-                    .attr("width", 30)
-                    .attr("height", function(d) { return 215 - self.chart.y(d.y); })
-                    .attr("title", function(d) {
-                        return parseInt(d.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                    });
-
-                    $('.chart rect').tooltip();
-
-*/
 			},
 
 			updateChartData: function(region) {
 				var self = this;
+				var sum = this.stats[region].onreef_value + this.stats[region].adjacent_value;
 				var data = [
-					{x: "On Reef", y: this.stats[region].onreef_value},
-					{x: "Adjacent Reef", y: this.stats[region].adjacent_value}
+					{
+						x: "On Reef",
+						y: this.stats[region].onreef_value,
+						per: parseInt((this.stats[region].onreef_value / sum) * 100)
+					},
+					{
+						x: "Adjacent Reef",
+						y: this.stats[region].adjacent_value,
+						per: parseInt((this.stats[region].adjacent_value / sum) * 100)
+					}
 				];
 
 				this.chart.y.domain([0, d3.max([data[0].y, data[1].y])]);
 				this.chart.svg.select(".y.axis")
                     .transition().duration(1200).ease("linear")
                     .call(this.chart.yAxis);
+
+                this.chart.svg.selectAll(".bar-label")
+                	.data(data)
+                	.transition().duration(1200).ease("sin-in-out")
+                	.text(function(d) {
+                		console.log(d)
+                		return '$' + self.addCommas(d.y) + ' (' + d.per + '%)';
+                	})
+                	.attr('class', 'bar-label')
+                	.attr("x", function(d) { return self.chart.x(d.x); })
+                	.attr("y", function(d) { return self.chart.y(d.y) - 5; });
 
 				this.chart.svg.selectAll(".bar")
 				    .data(data)
