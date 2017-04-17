@@ -196,6 +196,11 @@ define([
 						.attr("width", x.rangeBand())
 						.attr("height", function(d) { return height - y(d.y); });
 
+				$('.chart rect.bar').tooltip({
+					track: true
+				});
+
+
 /*
 	                .append("g")
 	                    .attr("transform", "translate(" + this.chart.margin.left + "," + this.chart.margin.right + ")");
@@ -290,7 +295,7 @@ define([
 					.attr("title", function(d) {
 					    return parseInt(d.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 					})
-					.attr("y", function(d) { console.log(self.chart.y);return self.chart.y(d.y); })
+					.attr("y", function(d) { return self.chart.y(d.y); })
 					.attr("height", function(d) { return self.chart.height - self.chart.y(d.y); });
 
 
