@@ -170,8 +170,12 @@
 		stroke: #333;
 	}
 
-	.chart rect.bar {
+	.chart rect.bar.On-Reef {
 		fill: #77b873;
+	}
+
+	.chart rect.bar.Adjacent-Reef {
+		fill: #5d97da;
 	}
 
 
@@ -187,7 +191,7 @@
 			Choose region to explore:
 			<div class="chosen-wrap">
 				<select id="chosenRegion" class="chosen">
-					<option value="Global" selected>Global</option>
+					<option value="Global" selected>The World</option>
 
 					<% _.each(regions, function(val, key) { %>
 	    				<option value="<%= val %>"><%= val %></option>

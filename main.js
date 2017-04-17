@@ -33,11 +33,7 @@ define([
 			resizable: false,
 			width: 425,
 			size: 'custom',
-			chart: {
-				margin: {top: 20, right: 20, bottom: 30, left: 75},
-			    width: 410 - 40,
-			    height: 310 - 50
-			},
+			chart: {},
 
 			initialize: function(frameworkParameters) {
 				declare.safeMixin(this, frameworkParameters);
@@ -146,7 +142,7 @@ define([
 					top: 20,
 					right: 20, 
 					bottom: 30,
-					left: 40
+					left: 60
 				};
 			    var width = this.chart.width = 382 - margin.left - margin.right;
 			    var height = this.chart.height = 300 - margin.top - margin.bottom;
@@ -170,9 +166,9 @@ define([
     			x.domain(["On Reef", "Adjacent Reef"]);
   				y.domain([0, d3.max(data, function(d) { return d.y; })]);
 
-  				var xAxis = d3.svg.axis().scale(x).orient("bottom");
-  				var yAxis = d3.svg.axis().scale(y).orient("left").ticks(6).tickFormat(function(d) {
-					return d / 1000000000;
+  				var xAxis = this.chart.xAxis = d3.svg.axis().scale(x).orient("bottom");
+  				var yAxis = this.chart.yAxis = d3.svg.axis().scale(y).orient("left").ticks(6).tickFormat(function(d) {
+					return self.addCommas(d / 1000000);
 				});
 
   				g.append("g")
@@ -184,10 +180,20 @@ define([
 					.attr("class", "y axis")
 					.call(yAxis);
 
+				g.append("text")
+                    .attr("class", "yaxis-label")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 0 - margin.left + 10)
+                    .attr("x", 0 - (height / 2))
+                    .attr("text-anchor", "middle")
+                    .text("Thousands USD");
+
   				g.selectAll(".bar")
 				    .data(data)
 				    .enter().append("rect")
-						.attr("class", "bar")
+						.attr("class", function(d) {
+							return "bar " + d.x.replace(' ', '-');
+						})
 						.attr("title", function(d) {
 							return parseInt(d.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 						})
@@ -288,10 +294,17 @@ define([
 					{x: "Adjacent Reef", y: this.stats[region].adjacent_value}
 				];
 
+				this.chart.y.domain([0, d3.max([data[0].y, data[1].y])]);
+				this.chart.svg.select(".y.axis")
+                    .transition().duration(1200).ease("linear")
+                    .call(this.chart.yAxis);
+
 				this.chart.svg.selectAll(".bar")
 				    .data(data)
 				    .transition().duration(1200).ease("sin-in-out")
-			      	.attr("class", "bar")
+			      	.attr("class", function(d) {
+						return "bar " + d.x.replace(' ', '-');
+					})
 					.attr("title", function(d) {
 					    return parseInt(d.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 					})
