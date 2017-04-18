@@ -114,7 +114,7 @@ define([
 						url: 'plugins/recreation-tourism/infographic.html',
 						fixed: true,
 						width: 825,
-						height: 638
+						height: 673
 					});
 				});
 
