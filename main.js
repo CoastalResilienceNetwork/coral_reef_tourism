@@ -15,7 +15,10 @@ define([
 	"framework/PluginBase",
 	"dijit/layout/ContentPane",
 	"esri/layers/ArcGISDynamicMapServiceLayer",
+	"esri/geometry/Extent",
+	"esri/SpatialReference",
     "dojo/dom",
+    "dojo/text!./country-config.json",
     "dojo/text!./stats.json",
     "dojo/text!./template.html",
 	], function(declare,
@@ -23,10 +26,14 @@ define([
 		PluginBase,
 		ContentPane,
 		ArcGISDynamicMapServiceLayer,
+		Extent,
+		SpatialReference,
 		dom,
+		Config,
 		Stats,
 		template
 	) {
+
 
 		return declare(PluginBase, {
 			toolbarName: 'Recreation & Tourism',
@@ -39,6 +46,7 @@ define([
 				declare.safeMixin(this, frameworkParameters);
 				this.$el = $(this.container);
 				this.stats = $.parseJSON(Stats);
+				this.config = $.parseJSON(Config);
 			},
 
 			bindEvents: function() {
@@ -73,6 +81,7 @@ define([
 				} else {
 					this.layerGlobal.setVisibleLayers([1]);
 				}
+			
 			},
 
 			deactivate: function() {
@@ -133,6 +142,12 @@ define([
 				this.$el.find('.stat.reef_area .number .value').html(this.addCommas(this.stats[region].total_reef_area.toFixed(0)));
 				this.$el.find('.stat.reef_area_tourism .number .value').html(this.addCommas(this.stats[region].reefs_tourism_area.toFixed(0)));
 				this.$el.find('.stat.reef_area_tourism .number .percentage').html((this.stats[region].reefs_tourism_area_percent * 100).toFixed(0));
+
+				this.map.setExtent(this.getExtent.apply(this, this.config[region].EXTENT), true);
+			},
+
+			getExtent: function(xmin, ymin, xmax, ymax) {
+				return new Extent(xmin, ymin, xmax, ymax, new SpatialReference({wkid: 102100})).expand(1.1);
 			},
 
 			renderChart: function() {
@@ -243,7 +258,6 @@ define([
                 	.data(data)
                 	.transition().duration(1200).ease("sin-in-out")
                 	.text(function(d) {
-                		console.log(d)
                 		return '$' + self.addCommas(d.y) + ' (' + d.per + '%)';
                 	})
                 	.attr('class', 'bar-label')

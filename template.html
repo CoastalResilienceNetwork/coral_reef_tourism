@@ -202,9 +202,9 @@
 				<select id="chosenRegion" class="chosen">
 					<option value="Global" selected>The World</option>
 
-					<% _.each(regions, function(val, key) { %>
+					<% _.each(regions, function(val, key) { if (val !== "Global") {%>
 	    				<option value="<%= val %>"><%= val %></option>
-	    			<% }); %>
+	    			<% }}); %>
 				</select>
 			</div>
 		</div>
