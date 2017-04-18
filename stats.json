@@ -59,26 +59,6 @@
       "onreef_value":8426000,
       "adjacent_value":11842000
    },
-   "Guadeloupe (Inc. St Martin And St Bart's)":{
-      "reef_value":0,
-      "total_visitation_value":74219000,
-      "higest_value_reefs":0,
-      "reefs_tourism_area":0,
-      "reefs_tourism_area_percent":0,
-      "total_reef_area":0,
-      "onreef_value":38244000,
-      "adjacent_value":59168000
-   },
-   "Sint Maarten":{
-      "reef_value":0,
-      "total_visitation_value":332575000,
-      "higest_value_reefs":0,
-      "reefs_tourism_area":0,
-      "reefs_tourism_area_percent":0,
-      "total_reef_area":0,
-      "onreef_value":54189000,
-      "adjacent_value":72084000
-   },
    "Antigua And Barbuda":{
       "reef_value":70781000,
       "total_visitation_value":124321000,
@@ -88,26 +68,6 @@
       "total_reef_area":125,
       "onreef_value":24312000,
       "adjacent_value":46469000
-   },
-   "Saba":{
-      "reef_value":0,
-      "total_visitation_value":10132000,
-      "higest_value_reefs":0,
-      "reefs_tourism_area":0,
-      "reefs_tourism_area_percent":0,
-      "total_reef_area":0,
-      "onreef_value":2480000,
-      "adjacent_value":265000
-   },
-   "Sint Eustatius":{
-      "reef_value":0,
-      "total_visitation_value":25500000,
-      "higest_value_reefs":0,
-      "reefs_tourism_area":0,
-      "reefs_tourism_area_percent":0,
-      "total_reef_area":0,
-      "onreef_value":5203000,
-      "adjacent_value":782000
    },
    "St Kitts And Nevis":{
       "reef_value":17465000,
@@ -158,16 +118,6 @@
       "total_reef_area":66,
       "onreef_value":26849000,
       "adjacent_value":35649000
-   },
-   "Barbados":{
-      "reef_value":0,
-      "total_visitation_value":162022000,
-      "higest_value_reefs":0,
-      "reefs_tourism_area":0,
-      "reefs_tourism_area_percent":0,
-      "total_reef_area":0,
-      "onreef_value":69750000,
-      "adjacent_value":113396000
    },
    "St Vincent And The Grenadines":{
       "reef_value":25477000,
