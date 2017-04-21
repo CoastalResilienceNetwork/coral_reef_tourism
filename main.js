@@ -47,6 +47,10 @@ define([
 				this.$el = $(this.container);
 				this.stats = $.parseJSON(Stats);
 				this.config = $.parseJSON(Config);
+
+				// This hack removes a mismatch jquery-ui stylesheet.
+				// Hack needs to be removed when framework is upgraded
+				$('link[rel=stylesheet][href~="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"]').remove();
 			},
 
 			bindEvents: function() {
