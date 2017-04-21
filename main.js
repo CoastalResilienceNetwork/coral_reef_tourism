@@ -137,8 +137,10 @@ define([
 			updateStats: function(region) {
 				if (region === "Global") {
 					this.$el.find('.stats .header .region-label').html('the World');
+					this.map.setExtent(this.getExtent.apply(this, this.config[region].EXTENT), false);
 				} else {
 					this.$el.find('.stats .header .region-label').html(region);
+					this.map.setExtent(this.getExtent.apply(this, this.config[region].EXTENT), true);
 				}
 
 				this.$el.find('.stat.reef_value .number .value').html(this.addCommas(this.stats[region].reef_value));
@@ -148,7 +150,6 @@ define([
 				this.$el.find('.stat.reef_area_tourism .number .value').html(this.addCommas(this.stats[region].reefs_tourism_area.toFixed(0)));
 				this.$el.find('.stat.reef_area_tourism .number .percentage').html((this.stats[region].reefs_tourism_area_percent * 100).toFixed(0));
 
-				this.map.setExtent(this.getExtent.apply(this, this.config[region].EXTENT), true);
 			},
 
 			getExtent: function(xmin, ymin, xmax, ymax) {
