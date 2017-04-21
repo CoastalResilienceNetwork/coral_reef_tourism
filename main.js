@@ -162,8 +162,8 @@ define([
 				var margin = {
 					top: 20,
 					right: 20, 
-					bottom: 30,
-					left: 60
+					bottom: 50,
+					left: 65
 				};
 			    var width = this.chart.width = 382 - margin.left - margin.right;
 			    var height = this.chart.height = 300 - margin.top - margin.bottom;
@@ -187,7 +187,15 @@ define([
     			x.domain(["On Reef", "Adjacent Reef"]);
   				y.domain([0, d3.max(data, function(d) { return d.y; })]);
 
-  				var xAxis = this.chart.xAxis = d3.svg.axis().scale(x).orient("bottom");
+  				var xAxis = this.chart.xAxis = d3.svg.axis().scale(x).orient("bottom").tickFormat(function(d) {
+  					if (d === 'On Reef') {
+  						return d + ' Tourism\n(diving, snorkelling,\nglass-bottom boats)';
+  					} else {
+  						return d + ' Tourism\n(beaches, calm seas,\nviews, seafood)';
+  					}
+					
+				});
+
   				var yAxis = this.chart.yAxis = d3.svg.axis().scale(y).orient("left").ticks(6).tickFormat(function(d) {
 					return self.addCommas(d / 1000000);
 				});
@@ -195,7 +203,27 @@ define([
   				g.append("g")
 					.attr("class", "x axis")
 					.attr("transform", "translate(0," + height + ")")
-					.call(xAxis);
+					.call(xAxis)
+					.selectAll('.x .tick text')
+					.call(function(t) {
+						t.each(function(d) {
+							var tx = d3.select(this);
+							var str = tx.text().split('\n');
+							tx.text('');
+							tx.append('tspan')
+								.attr("x", 0)
+                				.attr("dy",".9em")
+								.text(str[0]);
+							tx.append('tspan')
+								.attr("x", 0)
+                				.attr("dy",".9em")
+								.text(str[1]);
+							tx.append('tspan')
+								.attr("x", 0)
+                				.attr("dy",".9em")
+								.text(str[2]);
+						});
+					});
 
 			    g.append("g")
 					.attr("class", "y axis")
