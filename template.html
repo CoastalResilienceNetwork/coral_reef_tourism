@@ -180,11 +180,11 @@
 	}
 
 	.chart rect.bar.On-Reef {
-		fill: #77b873;
+		fill: #5d97da;
 	}
 
 	.chart rect.bar.Adjacent-Reef {
-		fill: #5d97da;
+		fill: #4CECF3;
 	}
 
 
@@ -200,7 +200,7 @@
 			Choose region to explore:
 			<div class="chosen-wrap">
 				<select id="chosenRegion" class="chosen">
-					<option value="Global" selected>The World</option>
+					<option value="Global" selected>Global</option>
 
 					<% _.each(regions, function(val, key) { if (val !== "Global") {%>
 	    				<option value="<%= val %>"><%= val %></option>
@@ -220,30 +220,30 @@
 			<div class="stat-info">
 				<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
 			</div>
+			<div class="description">Value of coral reefs</div>
 			<div class="number">
 				$<span class="value"></span>
 			</div>
-			<div class="description">Value of coral reefs</div>
 		</div>
 
 		<div class="stat total_visitation" data-layer=3>
 			<div class="stat-info">
 				<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
 			</div>
+			<div class="description">Total Visitation value</div>
 			<div class="number">
-				<span class="value"></span>
+				$<span class="value"></span>
 			</div>
-			<div class="description">Total Visitation</div>
 		</div>
 
 		<div class="stat reef_highest_value" data-layer=2>
 			<div class="stat-info">
 				<span class="fa fa-info-circle" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></span>
 			</div>
+			<div class="description">Highest value reefs (top 10%) generate</div>
 			<div class="number">
 				><span class="value"></span> <span class="units">per km<sup>2</sup> per year</span>
 			</div>
-			<div class="description">Highest value reefs (top 10%) generate</div>
 		</div>
 
 		<div class="stat non-interactive reef_area">
@@ -270,17 +270,6 @@
 
 	</div>
 
-	<div class="chart">
+	<div class="chart"></div>
 
-	</div>
-
-	<!--
-	<div class="additional-layers">
-		<label class="form-component">
-			<input type="checkbox">
-			<div class="check"></div>
-			<span class="form-text">Modelled total visitation value of coral reefs (per km<sup>2</sup>)</span>
-		</label>
-	</div>
-	-->
 </div>
