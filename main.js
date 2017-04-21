@@ -141,6 +141,12 @@ define([
 				} else {
 					this.$el.find('.stats .header .region-label').html(region);
 					this.map.setExtent(this.getExtent.apply(this, this.config[region].EXTENT), true);
+
+					this.$el.find('.reef_value .fa-info-circle').attr('title', this.config[region].TOOLTIPS.reef_value);
+					this.$el.find('.total_visitation .fa-info-circle').attr('title', this.config[region].TOOLTIPS.total_visitation);
+					this.$el.find('.reef_highest_value .fa-info-circle').attr('title', this.config[region].TOOLTIPS.reef_highest_value);
+
+
 				}
 
 				this.$el.find('.stat.reef_value .number .value').html(this.addCommas(this.stats[region].reef_value));
