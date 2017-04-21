@@ -112,7 +112,7 @@ define([
                 	width: '100%'
                 });
 
-                $(this.container).parent().append('<button id="viewCrsInfoGraphicIcon" class="button button-default ig-icon"><img src="plugins/recreation-tourism/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>');
+                $(this.container).parent().append('<button id="viewCrsInfoGraphicIcon" title="View infographic" class="button button-default ig-icon"><img src="plugins/recreation-tourism/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>');
 				$(this.container).parent().find("#viewCrsInfoGraphicIcon").on('click',function(c){
 					TINY.box.show({
 						animate: true,
@@ -121,7 +121,7 @@ define([
 						width: 825,
 						height: 673
 					});
-				});
+				}).tooltip();
 
 				this.updateStats('Global');
 
