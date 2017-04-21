@@ -56,7 +56,8 @@ define([
 			bindEvents: function() {
 				var self = this;
 				this.$el.find('.stat').not('.non-interactive').on('click', function(e) {
-					$('.stats .stat.active').removeClass('active');
+					self.$el.find('.stats .stat.active').removeClass('active');
+					d3.selectAll('.chart rect.bar.disabled').classed('disabled', false);
 					$(e.currentTarget).addClass('active');
 					self.layerGlobal.setVisibleLayers([$(e.currentTarget).data('layer')]);
 				});
@@ -229,7 +230,18 @@ define([
 						.attr("x", function(d) { return x(d.x); })
 						.attr("y", function(d) { return y(d.y); })
 						.attr("width", x.rangeBand())
-						.attr("height", function(d) { return height - y(d.y); });
+						.attr("height", function(d) { return height - y(d.y); })
+						.on('click', function(d) {
+							self.$el.find('.stats .stat.active').removeClass('active');
+							d3.selectAll('.chart rect.bar.disabled').classed('disabled', false);
+							if (d.x === "On Reef") {
+								self.layerGlobal.setVisibleLayers([4]);
+								d3.selectAll('.chart rect.bar.Adjacent-Reef').classed('disabled', true);
+							} else { // Adjacent
+								self.layerGlobal.setVisibleLayers([5]);
+								d3.selectAll('.chart rect.bar.On-Reef').classed('disabled', true);
+							}
+						});
 
 				/*$('.chart rect.bar').tooltip({
 					track: true
