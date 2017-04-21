@@ -147,7 +147,7 @@ define([
 			},
 
 			getExtent: function(xmin, ymin, xmax, ymax) {
-				return new Extent(xmin, ymin, xmax, ymax, new SpatialReference({wkid: 102100})).expand(1.1);
+				return new Extent(xmin, ymin, xmax, ymax, new SpatialReference({wkid: 4326})).expand(1.1);
 			},
 
 			renderChart: function() {
