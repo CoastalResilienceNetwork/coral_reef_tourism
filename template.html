@@ -6,6 +6,33 @@
 		width: calc(100% - 19px);
 	}
 
+	.map[data-zoom="0"] .zoom-to-far-error,
+	.map[data-zoom="1"] .zoom-to-far-error,
+	.map[data-zoom="2"] .zoom-to-far-error,
+	.map[data-zoom="3"] .zoom-to-far-error,
+	.map[data-zoom="4"] .zoom-to-far-error,
+	.map[data-zoom="5"] .zoom-to-far-error,
+	.map[data-zoom="6"] .zoom-to-far-error,
+	.map[data-zoom="7"] .zoom-to-far-error,
+	.map[data-zoom="8"] .zoom-to-far-error,
+	.map[data-zoom="9"] .zoom-to-far-error,
+	.map[data-zoom="10"] .zoom-to-far-error {
+		display: none;
+	}
+
+	.zoom-to-far-error {
+		position: absolute;
+	    top: 14px;
+	    left: 50%;
+	    width: 225px;
+	    margin-left: -113px;
+	    background-color: #fff;
+	    color: #000;
+	    text-align: center;
+	    font-size: 14px;
+	    border: 1px solid gray;
+	}
+
 	.ig-icon {
 	    padding: 2px !important;
 	    height: 28px;
@@ -52,6 +79,13 @@
 	.select-controls .right-side {
 		background-color: #e7e7e7;
 		padding: 5px 17px 5px 5px;
+	}
+
+	.select-controls .right-side .form-component {
+	    margin-left: 20px;
+	    margin-top: 11px;
+	    margin-bottom: 0;
+		text-indent: -20px;
 	}
 
 	/* Stats */
@@ -153,10 +187,9 @@
 	/* End Stats */
 
 	.chart {
-		/*height: 207px;
-		background: url(plugins/recreation-tourism/temp_chart_placeholder.png) no-repeat;*/
 		background: #f3f4f3;
 		text-align: center;
+		padding-top: 20px;
 	}
 
 	.chart .x.axis path,
@@ -173,10 +206,15 @@
 
 	.chart rect.bar {
 		cursor: pointer;
+		opacity: 0.7;
 	}
 
 	.chart rect.bar.disabled {
 		fill: #ccc !important;
+	}
+
+	.chart rect.bar.active {
+		opacity: 1;
 	}
 
 	.chart rect.bar.On-Reef {
@@ -197,7 +235,7 @@
 
 	<div class="select-controls">
 		<div class="left-side">
-			Choose region to explore:
+			Choose geography to explore:
 			<div class="chosen-wrap">
 				<select id="chosenRegion" class="chosen">
 					<option value="Global" selected>Global</option>
@@ -210,33 +248,37 @@
 		</div>
 
 		<div class="right-side">
-
+			<label class="form-component" style="display: none;">
+				<input type="checkbox" id="scale-data">
+				<div class="check"></div>
+				<span class="form-text">Scale data for selected geography</span> 
+			</label>
 		</div>
 	</div>
 
 	<div class="stats">
 		<div class="header">Quick Stats for <span class="region-label">the World</span></div>
-		<div class="stat active reef_value" data-layer=1>
+		<div class="stat active reef_value" data-global-layer=[1] data-layer="reef_value">
 			<div class="stat-info">
 				<span class="fa fa-info-circle" title=""></span>
 			</div>
-			<div class="description">Value of coral reefs per year</div>
-			<div class="number">
-				<span class="value"></span>
-			</div>
-		</div>
-
-		<div class="stat total_visitation" data-layer=3>
-			<div class="stat-info">
-				<span class="fa fa-info-circle" title=""></span>
-			</div>
-			<div class="description">Total Visitation value</div>
+			<div class="description">Value of coral reefs per year (USD)</div>
 			<div class="number">
 				$<span class="value"></span>
 			</div>
 		</div>
 
-		<div class="stat reef_highest_value" data-layer=2>
+		<div class="stat total_visitation" data-global-layer=[3] data-layer="total_visitation">
+			<div class="stat-info">
+				<span class="fa fa-info-circle" title=""></span>
+			</div>
+			<div class="description">Total Visitation value</div>
+			<div class="number">
+				<span class="value"></span>
+			</div>
+		</div>
+
+		<div class="stat reef_highest_value" data-global-layer=[2] data-layer="reef_highest_value">
 			<div class="stat-info">
 				<span class="fa fa-info-circle" title=""></span>
 			</div>

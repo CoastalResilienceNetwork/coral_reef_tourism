@@ -34,7 +34,6 @@ define([
 		template
 	) {
 
-
 		return declare(PluginBase, {
 			toolbarName: 'Recreation & Tourism',
 			resizable: false,
@@ -55,19 +54,29 @@ define([
 
 			bindEvents: function() {
 				var self = this;
-				this.$el.find('.stat').not('.non-interactive').on('click', function(e) {
+				this.$el.find('.stats .stat').not('.non-interactive').on('click', function(e) {
 					self.$el.find('.stats .stat.active').removeClass('active');
 					d3.selectAll('.chart rect.bar.disabled').classed('disabled', false);
+					d3.selectAll('.chart rect.bar.active').classed('active', false);
 					$(e.currentTarget).addClass('active');
-					self.layerGlobal.setVisibleLayers([$(e.currentTarget).data('layer')]);
+					self.updateLayers();
 				});
 
 				this.$el.find('#chosenRegion').on('change', function(e) {
-					//self.zoomToRegion(e.target.value);
 					var region = e.target.value;
 					self.updateStats(region);
 					self.updateChartData(region);
+					self.updateLayers();
+
+					if (region === 'Global') {
+						self.$el.find('.right-side .form-component').hide();
+					} else {
+						self.$el.find('.right-side .form-component').show();
+					}
+
 				});
+
+				this.$el.find('#scale-data').on('change', _.bind(this.updateLayers, this));
 
 			},
 
@@ -79,13 +88,16 @@ define([
 
 				if (!this.layerGlobal) {
 					this.layerGlobal = new ArcGISDynamicMapServiceLayer("http://dev.services2.coastalresilience.org/arcgis/rest/services/OceanWealth/Recreation_and_Tourism/MapServer", {
-						id: 'global'
+						id: 'global',
+						maxScale: 500000
 					});
 					this.layerGlobal.setVisibleLayers([1]);
 					this.map.addLayer(this.layerGlobal);
 				} else {
-					this.layerGlobal.setVisibleLayers([1]);
+					this.updateLayers();
 				}
+
+				$('#map-0').append('<div class="zoom-to-far-error">Data not available at this zoom.<br>Please zoom out.</div>');
 			
 			},
 
@@ -93,6 +105,7 @@ define([
 
 				// Reset toolbar title positioning
 				$('.sidebar-nav .nav-title').css("margin-left", "0px");
+				$('.zoom-to-far-error').remove();
 			},
 
 			hibernate: function() {
@@ -134,6 +147,21 @@ define([
                 this.$el.find(".stat-info span").tooltip();
 			},
 
+			updateLayers: function() {
+				var layerid;
+				var region = this.$el.find("#chosenRegion").val();
+				var scaled = this.$el.find("#scale-data").is(":checked");
+				var layer = this.$el.find('.stat.active').attr('data-layer');
+
+				if (scaled) {
+					layerid = this.config[region].LAYERS[layer];
+				} else {
+					layerid = this.config.Global.LAYERS[layer];
+				}
+
+				this.layerGlobal.setVisibleLayers([layerid]);
+			},
+
 			updateStats: function(region) {
 				if (region === "Global") {
 					this.$el.find('.stats .header .region-label').html('the World');
@@ -166,10 +194,10 @@ define([
 				var self = this;
 
 				var margin = {
-					top: 20,
+					top: 30,
 					right: 20, 
 					bottom: 50,
-					left: 65
+					left: 70
 				};
 			    var width = this.chart.width = 382 - margin.left - margin.right;
 			    var height = this.chart.height = 300 - margin.top - margin.bottom;
@@ -177,9 +205,17 @@ define([
 			    var x = this.chart.x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
     			var y = this.chart.y = d3.scale.linear().range([height, 0]);
 
+    			var sum = this.stats.Global.onreef_value + this.stats.Global.adjacent_value;
     			var data = [
-					{x: "On Reef", y: this.stats.Global.onreef_value},
-					{x: "Adjacent Reef", y: this.stats.Global.adjacent_value}
+					{
+						x: "On Reef",
+						y: this.stats.Global.onreef_value,
+						per: parseInt((this.stats.Global.onreef_value / sum) * 100)},
+					{
+						x: "Adjacent Reef",
+						y: this.stats.Global.adjacent_value,
+						per: parseInt((this.stats.Global.adjacent_value / sum) * 100)
+					}
 				];
 
 				this.chart.svg = d3.selectAll(".chart")
@@ -222,11 +258,13 @@ define([
 								.text(str[0]);
 							tx.append('tspan')
 								.attr("x", 0)
-                				.attr("dy",".9em")
+                				.attr("dy","1.3em")
+                				.attr("font-size",".85em")
 								.text(str[1]);
 							tx.append('tspan')
 								.attr("x", 0)
-                				.attr("dy",".9em")
+                				.attr("dy","1.2em")
+                				.attr("font-size",".85em")
 								.text(str[2]);
 						});
 					});
@@ -247,20 +285,33 @@ define([
                 	.data(data)
                 	.enter().append("text")
                 	.text(function(d) {
-                		return '$' + self.addCommas(d.y) + ' (' + d.per + '%)';
+                		return '$' + self.addCommas(d.y);
                 	})
                 	.attr('class', 'bar-label')
-                	.attr("x", function(d) { return x(d.x); })
+                	.attr("x", function(d) { return (x(d.x) + (x.rangeBand() / 2)) - (this.getBBox().width / 2); })
+                	.attr("y", function(d) { return y(d.y) - 18; });
+
+                g.selectAll(".bar-label-per")
+                	.data(data)
+                	.enter().append("text")
+                	.text(function(d) {
+                		return d.per + '%';
+                	})
+                	.attr('class', 'bar-label-per')
+                	.attr("x", function(d) { return (x(d.x) + (x.rangeBand() / 2)) - (this.getBBox().width / 2); })
                 	.attr("y", function(d) { return y(d.y) - 5; });
 
   				g.selectAll(".bar")
 				    .data(data)
 				    .enter().append("rect")
 						.attr("class", function(d) {
-							return "bar " + d.x.replace(' ', '-');
+							return "stat bar " + d.x.replace(' ', '-');
 						})
 						.attr("title", function(d) {
 							return parseInt(d.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+						})
+						.attr("data-layer", function(d) {
+							return d.x.replace(' ', '_').toLowerCase();
 						})
 						.attr("x", function(d) { return x(d.x); })
 						.attr("y", function(d) { return y(d.y); })
@@ -269,13 +320,15 @@ define([
 						.on('click', function(d) {
 							self.$el.find('.stats .stat.active').removeClass('active');
 							d3.selectAll('.chart rect.bar.disabled').classed('disabled', false);
+							d3.selectAll('.chart rect.bar.active').classed('active', false);
 							if (d.x === "On Reef") {
-								self.layerGlobal.setVisibleLayers([4]);
 								d3.selectAll('.chart rect.bar.Adjacent-Reef').classed('disabled', true);
+								d3.selectAll('.chart rect.bar.On-Reef').classed('active', true);
 							} else { // Adjacent
-								self.layerGlobal.setVisibleLayers([5]);
 								d3.selectAll('.chart rect.bar.On-Reef').classed('disabled', true);
+								d3.selectAll('.chart rect.bar.Adjacent-Reef').classed('active', true);
 							}
+							self.updateLayers();
 						});
 
 				/*$('.chart rect.bar').tooltip({
@@ -307,20 +360,29 @@ define([
 
                 this.chart.svg.selectAll(".bar-label")
                 	.data(data)
-                	.transition().duration(1200).ease("sin-in-out")
                 	.text(function(d) {
-                		return '$' + self.addCommas(d.y) + ' (' + d.per + '%)';
+                		return '$' + self.addCommas(d.y);
                 	})
+                	.attr("x", function(d) { return (self.chart.x(d.x) + (self.chart.x.rangeBand() / 2)) - (this.getBBox().width / 2); })
+                	.transition().duration(1200).ease("sin-in-out")
                 	.attr('class', 'bar-label')
-                	.attr("x", function(d) { return self.chart.x(d.x); })
+                	.attr("y", function(d) { return self.chart.y(d.y) - 18; });
+
+                this.chart.svg.selectAll(".bar-label-per")
+                	.data(data)
+                	.text(function(d) {
+                		return d.per + '%';
+                	})
+                	.attr("x", function(d) { return (self.chart.x(d.x) + (self.chart.x.rangeBand() / 2)) - (this.getBBox().width / 2); })
+                	.transition().duration(1200).ease("sin-in-out")
+                	.attr('class', 'bar-label-per')
                 	.attr("y", function(d) { return self.chart.y(d.y) - 5; });
 
 				this.chart.svg.selectAll(".bar")
 				    .data(data)
+				    .classed('stat', true)
+				    .classed('bar', true)
 				    .transition().duration(1200).ease("sin-in-out")
-			      	.attr("class", function(d) {
-						return "bar " + d.x.replace(' ', '-');
-					})
 					.attr("title", function(d) {
 					    return parseInt(d.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 					})

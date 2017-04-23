@@ -3,112 +3,210 @@
 		"EXTENT": [-65.709229,16.909684,-60.435791,19.492486],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Anguilla. Reef areas in Anguilla with a modelled dollar value exceeding zero have been split into nine separate categories, with approximately the same number of reef areas in each category. Deciles were not used due to the distribution of the data. The top category represents reefs registering in our models as having an annual value of over $600,000 per square kilometre, and the bottom category is still registering values of up to $172,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood. ",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Anguilla. Reef areas in Anguilla with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 350,000 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 76,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Anguilla. Reef areas in Anguilla with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 350 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 76 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Anguilla. This map depicts the reef areas in Anguilla with the highest values. Deciles were not used due to the distribution of the data. The top category (out of a total of nine) represents reefs registering in our models as having an annual value of over $644,000 per square kilometre. These reefs are represented in red, while the remainder of the reefs are represented in grey."
+		},
+		"LAYERS": {
+			"reef_value": 14,
+			"total_visitation": 16,
+			"reef_highest_value": 15,
+			"on_reef": 17,
+			"adjacent_reef": 18
 		}
 	},
 	"Antigua And Barbuda": {
 		"EXTENT": [-64.421082,15.987734,-59.147644,18.583776],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Antigua and Barbuda. Reef areas in Antigua and Barbuda with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $1.6 million per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $12,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Antigua and Barbuda. Reef areas in Antigua and Barbuda with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 3 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 20,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Antigua and Barbuda. Reef areas in Antigua and Barbuda with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 3,000 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 20 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Antigua and Barbuda. This map depicts the 10% of reef areas (top decile) in Antigua and Barbuda with the highest values (>$1,668,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 20,
+			"total_visitation": 22,
+			"reef_highest_value": 21,
+			"on_reef": 23,
+			"adjacent_reef": 24
 		}
 	},
 	"Bahamas": {
 		"EXTENT": [-86.264648,17.978733,-65.170898,27.974998],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in the Bahamas. Reef areas in the Bahamas with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $400,000 per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $4,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Bahamas. Reef areas in the Bahamas with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 800,000 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 4,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Bahamas. Reef areas in the Bahamas with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 800 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 4 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Bahamas. This map depicts the 10% of reef areas (top decile) in the Bahamas with the highest values (>$492,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 7,
+			"total_visitation": 9,
+			"reef_highest_value": 8,
+			"on_reef": 10,
+			"adjacent_reef": 11
 		}
 	},
 	"British Virgin Islands": {
 		"EXTENT": [-67.233582,17.125042,-61.960144,19.704658],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in the British Virgin Islands. Reef areas with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $2 million per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $16,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Map highlighting the reefs estimated to have the highest annual dollar values in the British Virgin Islands. This map depicts the 10% of reef areas (top decile) in the British Virgin Islands with the highest values (>$2,016,000 per square kilometre) in red, with the remainder of the reefs in gray.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the British Virgin Islands. Reef areas in the British Virgin Islands with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2,700 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 24 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the British Virgin Islands. Reef areas in the British Virgin Islands with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2.7 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 24,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood."
+		},
+		"LAYERS": {
+			"reef_value": 26,
+			"total_visitation": 28,
+			"reef_highest_value": 27,
+			"on_reef": 29,
+			"adjacent_reef": 30
 		}
 	},
 	"Dominica": {
 		"EXTENT": [-63.992615,14.107276,-58.719177,16.728276],
 		"TOOLTIPS": {
-			"reef_value": "",
-			"total_visitation": "",
-			"reef_highest_value": ""
+			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Dominica. Reef areas in Dominica with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $1.4 per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $60,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Dominica. Reef areas in Dominica with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 6 thousand visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 248 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Dominica. This map depicts the 10% of reef areas (top decile) in Dominica with the highest values (>$1,432,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 32,
+			"total_visitation": 34,
+			"reef_highest_value": 33,
+			"on_reef": 35,
+			"adjacent_reef": 36
 		}
 	},
 	"Organisation of Eastern Caribbean States (OECS)": {
 		"EXTENT": [-72.279053,9.752370,-51.185303,20.241583],
 		"TOOLTIPS": {
-			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Dominica. Reef areas in Dominica with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $1.4 per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $60,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood. ",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the British Virgin Islands. Reef areas in the British Virgin Islands with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2.7 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 24,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Dominica. This map depicts the 10% of reef areas (top decile) in Dominica with the highest values (>$1,432,000 per square kilometre) in red, with the remainder of the reefs in gray."
-		}
-	},
-	"Federated States Of Micronesia": {
-		"EXTENT": [-220.583496,-4.696879,-178.395996,16.804541],
-		"TOOLTIPS": {
 			"reef_value": "",
 			"total_visitation": "",
 			"reef_highest_value": ""
+		},
+		"LAYERS": {
+			"reef_value": 1,
+			"total_visitation": 3,
+			"reef_highest_value": 2,
+			"on_reef": 4,
+			"adjacent_reef": 5
+		}
+	},
+	"Federated States of Micronesia": {
+		"EXTENT": [-220.583496,-4.696879,-178.395996,16.804541],
+		"TOOLTIPS": {
+			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in the Federated States of Micronesia. Reef areas in the Federated States of Micronesia with a modelled dollar value exceeding zero have been split into nine separate categories, with approximately the same number of reef areas in each category. Deciles were not used due to the distribution of the data. The top category represents reefs registering in our models as having an annual value of over $100,000 per square kilometre, and the bottom category is still registering values of up to $4,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Federated States of Micronesia. Reef areas in the Federated States of Micronesia with a modelled total visitation value exceeding zero have been split into seven separate categories (septiiles), with approximately the same number of reef areas in each category.  Deciles were not used due to the spread of the data.  The top category represents reefs registering in our models as having an annual value of over 76 visitor equivalents per square kilometre, and the bottom category is still registering values of up to 4 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Federated States of Micronesia. This map depicts the reef areas in the Federated States of Micronesia with the highest values. Deciles were not used due to the distribution of the data. The top category (out of a total of nine) represents reefs registering in our models as having an annual value of over $100,000 per square kilometre. These reefs are represented in red, while the remainder of the reefs are represented in grey."
+		},
+		"LAYERS": {
+			"reef_value": 75,
+			"total_visitation": 77,
+			"reef_highest_value": 76,
+			"on_reef": 78,
+			"adjacent_reef": 79
 		}
 	},
 	"Florida": {
 		"EXTENT": [-85.814209,23.059516,-75.267334,27.965295],
 		"TOOLTIPS": {
-			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in the Federated States of Micronesia. Reef areas in the Federated States of Micronesia with a modelled dollar value exceeding zero have been split into nine separate categories, with approximately the same number of reef areas in each category. Deciles were not used due to the distribution of the data. The top category represents reefs registering in our models as having an annual value of over $100,000 per square kilometre, and the bottom category is still registering values of up to $4,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Federated States of Micronesia. Reef areas in the Federated States of Micronesia with a modelled total visitation value exceeding zero have been split into seven separate categories (septiiles), with approximately the same number of reef areas in each category. Deciles were not used due to the spread of the data. The top category represents reefs registering in our models as having an annual value of over 76,000 visitor equivalents per square kilometre, and the bottom category is still registering values of up to 4,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Federated States of Micronesia. This map depicts the reef areas in the Federated States of Micronesia with the highest values. Deciles were not used due to the distribution of the data. The top category (out of a total of nine) represents reefs registering in our models as having an annual value of over $100,000 per square kilometre. These reefs are represented in red, while the remainder of the reefs are represented in grey."
+			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Florida. Reef areas in Florida with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $3 million per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $8,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood. ",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Florida. Reef areas in Florida with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 9,000 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 12 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Florida. This map depicts the 10% of reef areas (top decile) in Florida with the highest values (>$3,336,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 106,
+			"total_visitation": 108,
+			"reef_highest_value": 107,
+			"on_reef": 109,
+			"adjacent_reef": 110
 		}
 	},
 	"Global": {
 		"EXTENT": [-135.175781,-36.244273,56.162109,58.355630],
 		"TOOLTIPS": {
-			"reef_value": "",
-			"total_visitation": "",
-			"reef_highest_value": ""
+			"reef_value": "Mapped estimates of the dollar values of coral reefs to the tourism sector. Some 70% of the world’s coral reefs are too remote to register any current value. The remainder have been split into deciles. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the tourism and recreation visitation numbers directly attributable to the presence of coral reefs. Some 70% of the world’s coral reefs are too remote to register any current value. The remainder have been split into deciles. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values.  This map depicts the 10% of reef areas (top decile) with the highest values (>$908,000 per square kilometre) in red, with the remainder of the reefs in gray. "
+		},
+		"LAYERS": {
+			"reef_value": 1,
+			"total_visitation": 3,
+			"reef_highest_value": 2,
+			"on_reef": 4,
+			"adjacent_reef": 5
 		}
 	},
 	"Grenada": {
 		"EXTENT": [-64.327698,10.787443,-59.054260,13.445723],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Grenada. Reef areas in Grenada with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $560,000 per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $28,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Grenada. Reef areas in Grenada with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 76,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Grenada. Reef areas in Grenada with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2 thousand visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 76 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Grenada. This map depicts the 10% of reef areas (top decile) in Grenada with the highest values (>$560,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 38,
+			"total_visitation": 40,
+			"reef_highest_value": 39,
+			"on_reef": 41,
+			"adjacent_reef": 42
 		}
 	},
 	"Guam": {
 		"EXTENT": [-217.878113,12.095724,-212.604675,14.740355],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Guam. Reef areas in Guam with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $8 million per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $252,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Guam. Reef areas in the Guam with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 8 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 312,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Guam. Reef areas in the Guam with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 8 thousand visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 312 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Guam. This map depicts the 10% of reef areas (top decile) in Guam with the highest values (>$8,672,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 81,
+			"total_visitation": 83,
+			"reef_highest_value": 82,
+			"on_reef": 84,
+			"adjacent_reef": 85
 		}
 	},
-	"Mariana Islands": {
+	"Northern Mariana Islands": {
 		"EXTENT": [-219.473877,14.083301,-208.927002,19.290406],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in the Mariana Islands. Reef areas in the Mariana Islands with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $1 million per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $12,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Mariana Islands. Reef areas in the Mariana Islands with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 24,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Mariana Islands. This map depicts the 10% of reef areas (top decile) in the Bahamas with the highest values (>$1,012,000 per square kilometre) in red, with the remainder of the reefs in gray."
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Mariana Islands. Reef areas in the Mariana Islands with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2 thousand visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 24 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Mariana Islands.  This map depicts the 10% of reef areas (top decile) in the Mariana Islands with the highest values (>$1,012,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 87,
+			"total_visitation": 89,
+			"reef_highest_value": 88,
+			"on_reef": 90,
+			"adjacent_reef": 91
 		}
 	},
 	"Marshall Islands": {
 		"EXTENT": [-201.928711,2.943041,-180.834961,13.688688],
 		"TOOLTIPS": {
-			"reef_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Marshall Islands. This map depicts the reef areas in Anguilla with the highest values. Deciles were not used due to the distribution of the data. The top category (out of a total of four) represents reefs registering in our models as having an annual value of over $20,000 per square kilometre. These reefs are represented in green, while the remainder of the reefs are represented in grey. ",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Marshall Islands. Reef areas in the Marshall Islands with a modelled total visitation value exceeding zero have been split into four separate categories, with approximately the same number of reef areas in each category. Deciles were not used due to the distribution of the data. The top category represents reefs registering in our models as having an annual value of over 12,000 visitor equivalents per square kilometre, and the bottom category is still registering values of up to 4,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Marshall Islands. This map depicts the reef areas in Anguilla with the highest values. Deciles were not used due to the distribution of the data. The top category (out of a total of four) represents reefs registering in our models as having an annual value of over $20,000 per square kilometre. These reefs are represented in green, while the remainder of the reefs are represented in grey."
+			"reef_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Marshall Islands. This map depicts the reef areas in the Marshall Islands with the highest values. Deciles were not used due to the distribution of the data. The top category (out of a total of four) represents reefs registering in our models as having an annual value of over $20,000 per square kilometre. These reefs are represented in green, while the remainder of the reefs are represented in grey. ",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Marshall Islands. Reef areas in the Marshall Islands with a modelled total visitation value exceeding zero have been split into four separate categories, with approximately the same number of reef areas in each category.  Deciles were not used due to the distribution of the data.  The top category represents reefs registering in our models as having an annual value of over 12 visitor equivalents per square kilometre, and the bottom category is still registering values of up to 4 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in the Marshall Islands.  This map depicts the reef areas in the Marshall Islands with the highest values. Deciles were not used due to the distribution of the data. The top category (out of a total of four) represents reefs registering in our models as having an annual value of over $20,000 per square kilometre.  These reefs are represented in green, while the remainder of the reefs are represented in grey."
+		},
+		"LAYERS": {
+			"reef_value": 93,
+			"total_visitation": 95,
+			"reef_highest_value": 94,
+			"on_reef": 96,
+			"adjacent_reef": 97
 		}
 	},
 	"Martinique": {
 		"EXTENT": [-63.654785,13.344193,-58.381348,15.974532],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Martinique. Reef areas in Martinique with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $1.2 per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $160,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Martinique. Reef areas in Martinique with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 1 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 128,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Martinique. Reef areas in Martinique with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 1 thousand visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 128 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Martinique. This map depicts the 10% of reef areas (top decile) in Martinique with the highest values (>$1,296,000 per square kilometre) in red, with the remainder of the reefs in gray. "
+		},
+		"LAYERS": {
+			"reef_value": 44,
+			"total_visitation": 46,
+			"reef_highest_value": 45,
+			"on_reef": 47,
+			"adjacent_reef": 48
 		}
 	},
 	"Micronesia": {
@@ -117,46 +215,73 @@
 			"reef_value": "",
 			"total_visitation": "",
 			"reef_highest_value": ""
-		}
-	},
-	"Montserrat": {
-		"EXTENT": [-64.824829,15.443091,-59.551392,18.046644],
-		"TOOLTIPS": {
-			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Montserrat. Reef areas in Montserrat with a modelled dollar value exceeding zero have been split into seven separate categories (septiles), with approximately the same number of reef areas in each category. Deciles were not used due to the distribution of the data. The top category represents reefs registering in our models as having an annual value of over $290,000 per square kilometre, and the bottom category is still registering values of up to $48,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Montserrat. Reef areas in Montserrat with a modelled visitation value exceeding zero have been split into seven separate categories (septiiles), with approximately the same number of reef areas in each category. Deciles were not used due to the distribution of the data. The top category represents reefs registering in our models as having an annual value of over 264,000 visitor equivalents per square kilometre, and the bottom category is still registering values of up to 36,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Montserrat. This map depicts the reef areas in Montserrat with the highest values. Deciles were not used due to the distribution of the data. The top category (out of a total of seven) represents reefs registering in our models as having an annual value of over $292,000 per square kilometre. These reefs are represented in orange, while the remainder of the reefs are represented in grey."
+		},
+		"LAYERS": {
+			"reef_value": 1,
+			"total_visitation": 3,
+			"reef_highest_value": 2,
+			"on_reef": 4,
+			"adjacent_reef": 5
 		}
 	},
 	"Palau": {
 		"EXTENT": [-228.114624,5.908385,-222.841187,8.605463],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in Palau. Reef areas in Palau with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $700,000 per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $8,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Palau. Reef areas in Palau with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 450,000 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 4,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in Palau. Reef areas in Palau with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 450 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 4 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in Palau. This map depicts the 10% of reef areas (top decile) in Palau with the highest values (>$712,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 99,
+			"total_visitation": 101,
+			"reef_highest_value": 100,
+			"on_reef": 102,
+			"adjacent_reef": 103
 		}
 	},
 	"St Kitts And Nevis": {
 		"EXTENT": [-65.302734,15.963970,-60.029297,18.560344],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in St. Kitts and Nevis. Reef areas in St. Kitts and Nevis with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $390,000 per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $64,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in St. Kitts and Nevis. Reef areas in St. Kittss and Nevis with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 320,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in St. Kitts and Nevis. Reef areas in St. Kittss and Nevis with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 2 thousand visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 320 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in St. Kitts and Nevis. This map depicts the 10% of reef areas (top decile) in St. Kitts and Nevis with the highest values (>$396,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 56,
+			"total_visitation": 58,
+			"reef_highest_value": 57,
+			"on_reef": 59,
+			"adjacent_reef": 60
 		}
 	},
 	"St Lucia": {
 		"EXTENT": [-63.610840,12.581371,-58.337402,15.220589],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in St. Lucia. Reef areas in St. Lucia with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $2 million per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $224,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in St. Lucia. Reef areas in St. Lucia with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 5 million visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 556,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in St. Lucia. Reef areas in St. Lucia with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 5 thousand visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 556 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in St. Lucia. This map depicts the 10% of reef areas (top decile) in St. Lucia with the highest values (>$2,168,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 62,
+			"total_visitation": 64,
+			"reef_highest_value": 63,
+			"on_reef": 65,
+			"adjacent_reef": 66
 		}
 	},
 	"St Vincent And The Grenadines": {
 		"EXTENT": [-63.992615,11.329253,-58.719177,13.982046],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in St. Vincent and the Grenadines. Reef areas in St. Vincent and the Grenadines with a modelled dollar value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over $400,000 per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to $92,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
-			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in St. Vincent and the Grenadines. Reef areas in St. Vincent and the Grenadines with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 850,000 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 152,000 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
+			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in St. Vincent and the Grenadines. Reef areas in St. Vincent and the Grenadines with a modelled visitation value exceeding zero have been split into deciles. The top decile (10% of reefs with tourism value) represents reefs registering in our models as having an annual value of over 850 visitor equivalents per square kilometre, and the bottom decile (lowest 10%) are still registering values of up to 152 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"reef_highest_value": "Map highlighting the reefs estimated to have the highest annual dollar values in St. Vincent and the Grenadines. This map depicts the 10% of reef areas (top decile) in St. Vincent and the Grenadines with the highest values (>$432,000 per square kilometre) in red, with the remainder of the reefs in gray."
+		},
+		"LAYERS": {
+			"reef_value": 68,
+			"total_visitation": 70,
+			"reef_highest_value": 69,
+			"on_reef": 71,
+			"adjacent_reef": 72
 		}
 	}
 }

@@ -2,7 +2,7 @@
    "Global":{
       "reef_value":35473669000,
       "total_visitation_value":68563704,
-      "higest_value_reefs":908.000,
+      "higest_value_reefs":908000,
       "reefs_tourism_area":73531.5,
       "reefs_tourism_area_percent":0.2948061,
       "total_reef_area":249423.25,
@@ -32,7 +32,7 @@
    "Bahamas":{
       "reef_value":516478000,
       "total_visitation_value":895113,
-      "higest_value_reefs":492.000,
+      "higest_value_reefs":492000,
       "reefs_tourism_area":2494.5,
       "reefs_tourism_area_percent":0.6112472,
       "total_reef_area":4081,
@@ -52,7 +52,7 @@
    "Anguilla":{
       "reef_value":19451000,
       "total_visitation_value":10310,
-      "higest_value_reefs":644.000,
+      "higest_value_reefs":644000,
       "reefs_tourism_area":52.25,
       "reefs_tourism_area_percent":1,
       "total_reef_area":52.25,
@@ -78,16 +78,6 @@
       "total_reef_area":82,
       "onreef_value":6121000,
       "adjacent_value":9796000
-   },
-   "Montserrat":{
-      "reef_value":1251000,
-      "total_visitation_value":1111,
-      "higest_value_reefs":0,
-      "reefs_tourism_area":7.75,
-      "reefs_tourism_area_percent":1,
-      "total_reef_area":7.75,
-      "onreef_value":812000,
-      "adjacent_value":439000
    },
    "Dominica":{
       "reef_value":22727000,
@@ -122,7 +112,7 @@
    "St Vincent And The Grenadines":{
       "reef_value":24351000,
       "total_visitation_value":47869,
-      "higest_value_reefs":432.000,
+      "higest_value_reefs":432000,
       "reefs_tourism_area":85.25,
       "reefs_tourism_area_percent":1,
       "total_reef_area":85.25,
@@ -132,14 +122,14 @@
    "Grenada":{
       "reef_value":22616000,
       "total_visitation_value":81097,
-      "higest_value_reefs":560.000,
+      "higest_value_reefs":560000,
       "reefs_tourism_area":118.25,
       "reefs_tourism_area_percent":1,
       "total_reef_area":118.25,
       "onreef_value":12179000,
       "adjacent_value":10437000
    },
-   "Mariana Islands":{
+   "Northern Mariana Islands":{
       "reef_value":60856000,
       "total_visitation_value":120560,
       "higest_value_reefs":1012000,
@@ -152,7 +142,7 @@
    "Marshall Islands":{
       "reef_value":346000,
       "total_visitation_value":314,
-      "higest_value_reefs":20.000,
+      "higest_value_reefs":20000,
       "reefs_tourism_area":40.5,
       "reefs_tourism_area_percent":0.0113819,
       "total_reef_area":3558.25,
@@ -169,7 +159,7 @@
       "onreef_value":207754000,
       "adjacent_value":115185000
    },
-   "Federated States Of Micronesia":{
+   "Federated States of Micronesia":{
       "reef_value":16150000,
       "total_visitation_value":10953,
       "higest_value_reefs":0,
@@ -192,7 +182,7 @@
    "Bahamas":{
       "reef_value":516478000,
       "total_visitation_value":895113,
-      "higest_value_reefs":492.000,
+      "higest_value_reefs":492000,
       "reefs_tourism_area":2494.5,
       "reefs_tourism_area_percent":0.6112472,
       "total_reef_area":4081,
