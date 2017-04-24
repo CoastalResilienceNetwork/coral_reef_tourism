@@ -50,6 +50,9 @@ define([
 				// This hack removes a mismatch jquery-ui stylesheet.
 				// Hack needs to be removed when framework is upgraded
 				$('link[rel=stylesheet][href~="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"]').remove();
+			
+				// Hack that affects all plugins in app until a framework change can be made
+				$('.plugin-minimize').hide();
 			},
 
 			bindEvents: function() {
