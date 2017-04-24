@@ -279,7 +279,7 @@ define([
                     .attr("y", 0 - margin.left + 10)
                     .attr("x", 0 - (height / 2))
                     .attr("text-anchor", "middle")
-                    .text("Thousands USD");
+                    .text("Millions USD");
 
                 g.selectAll(".bar-label")
                 	.data(data)
