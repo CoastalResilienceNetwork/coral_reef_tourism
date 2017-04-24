@@ -102,7 +102,8 @@ define([
 			},
 
 			deactivate: function() {
-
+				this.map.removeLayer(this.layerGlobal);
+				this.layerGlobal = null;
 				$('.zoom-to-far-error').remove();
 			},
 
