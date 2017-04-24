@@ -103,8 +103,6 @@ define([
 
 			deactivate: function() {
 
-				// Reset toolbar title positioning
-				$('.sidebar-nav .nav-title').css("margin-left", "0px");
 				$('.zoom-to-far-error').remove();
 			},
 
