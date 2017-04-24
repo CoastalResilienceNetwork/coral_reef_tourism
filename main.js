@@ -127,7 +127,8 @@ define([
                 	width: '100%'
                 });
 
-                $(this.container).parent().append('<button title="View infographic" class="button button-default viewCrsInfoGraphicIcon ig-icon"><img src="plugins/recreation-tourism/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>');
+                $(this.container).parent().find('.viewCrsInfoGraphicIcon').remove();
+                $(this.container).parent().find('.sidebar-nav').append('<button title="View infographic" class="button button-default viewCrsInfoGraphicIcon ig-icon"><img src="plugins/recreation-tourism/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>');
 				$(this.container).parent().find(".viewCrsInfoGraphicIcon").on('click',function(c){
 					TINY.box.show({
 						animate: true,
