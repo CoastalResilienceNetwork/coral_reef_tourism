@@ -131,8 +131,8 @@ define([
 						animate: true,
 						url: 'plugins/recreation-tourism/infographic.html',
 						fixed: true,
-						width: 825,
-						height: 673
+						width: 600,
+						height: 499
 					});
 				}).tooltip();
 
