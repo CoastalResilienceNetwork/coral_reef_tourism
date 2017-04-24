@@ -1,13 +1,13 @@
 {
    "Global":{
-      "reef_value":35473669000,
-      "total_visitation_value":68563704,
+      "reef_value":35780000000,
+      "total_visitation_value":69895000,
       "higest_value_reefs":908000,
       "reefs_tourism_area":73531.5,
       "reefs_tourism_area_percent":0.2948061,
       "total_reef_area":249423.25,
-      "onreef_value":19374449000,
-      "adjacent_value":16099220000
+      "onreef_value":19459000000,
+      "adjacent_value":16321000000
    },
    "Organisation of Eastern Caribbean States (OECS)":{
       "reef_value":515625000,
