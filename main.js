@@ -84,7 +84,7 @@ define([
 				this.render();
 
 				// Adjust toolbar title position to make room for image button
-				$('.sidebar-nav .nav-title').css("margin-left", "25px");
+				this.$el.prev('.sidebar-nav').find('.nav-title').css("margin-left", "25px");
 
 				if (!this.layerGlobal) {
 					this.layerGlobal = new ArcGISDynamicMapServiceLayer("http://dev.services2.coastalresilience.org/arcgis/rest/services/OceanWealth/Recreation_and_Tourism/MapServer", {
@@ -125,8 +125,8 @@ define([
                 	width: '100%'
                 });
 
-                $(this.container).parent().append('<button id="viewCrsInfoGraphicIcon" title="View infographic" class="button button-default ig-icon"><img src="plugins/recreation-tourism/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>');
-				$(this.container).parent().find("#viewCrsInfoGraphicIcon").on('click',function(c){
+                $(this.container).parent().append('<button title="View infographic" class="button button-default viewCrsInfoGraphicIcon ig-icon"><img src="plugins/recreation-tourism/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>');
+				$(this.container).parent().find(".viewCrsInfoGraphicIcon").on('click',function(c){
 					TINY.box.show({
 						animate: true,
 						url: 'plugins/recreation-tourism/infographic.html',
