@@ -74,23 +74,8 @@
 			"adjacent_reef": 36
 		}
 	},
-	"Organisation of Eastern Caribbean States (OECS)": {
-		"EXTENT": [-72.542725,9.253936,-51.635742,19.352611],
-		"TOOLTIPS": {
-			"reef_value": "",
-			"total_visitation": "",
-			"reef_highest_value": ""
-		},
-		"LAYERS": {
-			"reef_value": 1,
-			"total_visitation": 3,
-			"reef_highest_value": 2,
-			"on_reef": 4,
-			"adjacent_reef": 5
-		}
-	},
 	"Federated States of Micronesia": {
-		"EXTENT": [-227.900391,-3.030812,-185.712891,17.560247],
+		"EXTENT": [142,1.581830,160,11.931852],
 		"TOOLTIPS": {
 			"reef_value": "Mapped estimates of the annual dollar values of coral reefs to the tourism sector in the Federated States of Micronesia. Reef areas in the Federated States of Micronesia with a modelled dollar value exceeding zero have been split into nine separate categories, with approximately the same number of reef areas in each category. Deciles were not used due to the distribution of the data. The top category represents reefs registering in our models as having an annual value of over $100,000 per square kilometre, and the bottom category is still registering values of up to $4,000 per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
 			"total_visitation": "Mapped estimates of the annual tourism and recreation visitation numbers directly attributable to the presence of coral reefs in the Federated States of Micronesia. Reef areas in the Federated States of Micronesia with a modelled total visitation value exceeding zero have been split into seven separate categories (septiiles), with approximately the same number of reef areas in each category.  Deciles were not used due to the spread of the data.  The top category represents reefs registering in our models as having an annual value of over 76 visitor equivalents per square kilometre, and the bottom category is still registering values of up to 4 visitor equivalents per square kilometre. These values are taken from the combined value of on reef values and reef adjacent values, the former including recreational diving and snorkelling and the latter including the provision of calm waters, coral sand beaches, views and seafood.",
@@ -207,21 +192,6 @@
 			"reef_highest_value": 45,
 			"on_reef": 47,
 			"adjacent_reef": 48
-		}
-	},
-	"Micronesia": {
-		"EXTENT": [-245.478516,-13.325485,-161.103516,28.767659],
-		"TOOLTIPS": {
-			"reef_value": "",
-			"total_visitation": "",
-			"reef_highest_value": ""
-		},
-		"LAYERS": {
-			"reef_value": 1,
-			"total_visitation": 3,
-			"reef_highest_value": 2,
-			"on_reef": 4,
-			"adjacent_reef": 5
 		}
 	},
 	"Palau": {

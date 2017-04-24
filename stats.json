@@ -9,26 +9,6 @@
       "onreef_value":19459000000,
       "adjacent_value":16321000000
    },
-   "Organisation of Eastern Caribbean States (OECS)":{
-      "reef_value":515625000,
-      "total_visitation_value":911237,
-      "higest_value_reefs":0,
-      "reefs_tourism_area":993.5,
-      "reefs_tourism_area_percent":1,
-      "total_reef_area":993.5,
-      "onreef_value":271473000,
-      "adjacent_value":244152000
-   },
-   "Micronesia":{
-      "reef_value":491269000,
-      "total_visitation_value":454720,
-      "higest_value_reefs":0,
-      "reefs_tourism_area":1228.75,
-      "reefs_tourism_area_percent":0.1246797,
-      "total_reef_area":9855.25,
-      "onreef_value":346640000,
-      "adjacent_value":144629000
-   },
    "Bahamas":{
       "reef_value":516478000,
       "total_visitation_value":895113,
