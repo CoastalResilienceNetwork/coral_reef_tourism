@@ -90,7 +90,7 @@ define([
 				this.$el.prev('.sidebar-nav').find('.nav-title').css("margin-left", "25px");
 
 				if (!this.layerGlobal) {
-					this.layerGlobal = new ArcGISDynamicMapServiceLayer("http://dev.services2.coastalresilience.org/arcgis/rest/services/OceanWealth/Recreation_and_Tourism/MapServer", {
+					this.layerGlobal = new ArcGISDynamicMapServiceLayer("http://services.coastalresilience.org/arcgis/rest/services/OceanWealth/Recreation_and_Tourism/MapServer", {
 						id: 'global',
 						maxScale: 500000
 					});
