@@ -10,17 +10,18 @@ require({
 });
 
 define([
-	"dojo/_base/declare",
-	"d3",
-	"framework/PluginBase",
-	"dijit/layout/ContentPane",
-	"esri/layers/ArcGISDynamicMapServiceLayer",
-	"esri/geometry/Extent",
-	"esri/SpatialReference",
-    "dojo/dom",
-    "dojo/text!./country-config.json",
-    "dojo/text!./stats.json",
-    "dojo/text!./template.html",
+	'dojo/_base/declare',
+	'd3',
+	'framework/PluginBase',
+	'dijit/layout/ContentPane',
+	'esri/layers/ArcGISDynamicMapServiceLayer',
+	'esri/geometry/Extent',
+	'esri/SpatialReference',
+	'esri/tasks/query',
+    'esri/tasks/QueryTask',
+    'dojo/dom',
+    'dojo/text!./region.json',
+    'dojo/text!./template.html',
 	], function(declare,
 		d3,
 		PluginBase,
@@ -28,9 +29,10 @@ define([
 		ArcGISDynamicMapServiceLayer,
 		Extent,
 		SpatialReference,
+		Query,
+        QueryTask,
 		dom,
-		Config,
-		Stats,
+		RegionConfig,
 		template
 	) {
 
@@ -43,16 +45,45 @@ define([
 
 			initialize: function(frameworkParameters) {
 				declare.safeMixin(this, frameworkParameters);
+				var query = new Query();
+				this.regionConfig = $.parseJSON(RegionConfig);
+                var queryTask = new QueryTask(this.regionConfig.service + '/135');
 				this.$el = $(this.container);
-				this.stats = $.parseJSON(Stats);
-				this.config = $.parseJSON(Config);
 
-				// This hack removes a mismatch jquery-ui stylesheet.
-				// Hack needs to be removed when framework is upgraded
-				$('link[rel=stylesheet][href~="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"]').remove();
+                query.where = '1=1';
+                query.returnGeometry = false;
+                query.outFields = ['*'];
+                queryTask.execute(query, _.bind(this.processData, this));
 			
 				// Hack that affects all plugins in app until a framework change can be made
 				$('.plugin-minimize').hide();
+			},
+
+			processData: function(data) {
+				var transformedData = {};
+				$.each(data.features, function(idx, datum) {
+					transformedData[datum.attributes.region] = datum.attributes;
+				});
+				this.stats = transformedData;
+			},
+
+			createLayerList: function(service) {
+				var list = {};
+				_.chain(service.layer.layerInfos).filter(function(layer) {
+					if (layer.subLayerIds) {
+						return layer.subLayerIds.length === 5;
+					}
+					return false;
+				}).each(function(layer) {
+					list[layer.name.trim().toLowerCase()] = {
+						"reef_value": layer.subLayerIds[0],
+						"highest_value_reefs": layer.subLayerIds[1],
+						"total_visitation": layer.subLayerIds[2],
+						"on_reef": layer.subLayerIds[3],
+						"adjacent_reef": layer.subLayerIds[4],
+					};
+				});
+				this.layerList = list;
 			},
 
 			bindEvents: function() {
@@ -90,10 +121,13 @@ define([
 				this.$el.prev('.sidebar-nav').find('.nav-title').css("margin-left", "25px");
 
 				if (!this.layerGlobal) {
-					this.layerGlobal = new ArcGISDynamicMapServiceLayer("http://services.coastalresilience.org/arcgis/rest/services/OceanWealth/Recreation_and_Tourism/MapServer", {
+					this.layerGlobal = new ArcGISDynamicMapServiceLayer(this.regionConfig.service, {
 						id: 'global',
 						maxScale: 500000
 					});
+
+					this.layerGlobal.on('load', _.bind(this.createLayerList,this));
+					
 					this.layerGlobal.setVisibleLayers([1]);
 					this.map.addLayer(this.layerGlobal);
 				} else {
@@ -157,40 +191,42 @@ define([
 				var layer = this.$el.find('.stat.active').attr('data-layer');
 
 				if (scaled) {
-					layerid = this.config[region].LAYERS[layer];
+					layerid = this.layerList[region.toLowerCase()][layer];
 				} else {
-					layerid = this.config.Global.LAYERS[layer];
+					layerid = this.layerList.global[layer];
 				}
 
 				this.layerGlobal.setVisibleLayers([layerid]);
 			},
 
 			updateStats: function(region) {
-				if (region === "Global") {
+				var map = this.map;
+				if (region === 'Global') {
 					this.$el.find('.stats .header .region-label').html('the World');
-					this.map.setExtent(this.getExtent.apply(this, this.config[region].EXTENT), false);
+					this.map.setExtent(new Extent(-135.175781,-36.244273,56.162109,58.355630, new SpatialReference({wkid: 4326})), false);
 				} else {
 					this.$el.find('.stats .header .region-label').html(region);
-					this.map.setExtent(this.getExtent.apply(this, this.config[region].EXTENT), true);
 
-					this.$el.find('.reef_value .fa-info-circle').attr('title', this.config[region].TOOLTIPS.reef_value);
+					var query = new Query();
+                	var queryTask = new QueryTask(this.regionConfig.service + '/' + this.layerList[region.toLowerCase()].reef_value);
+	                query.where = '1=1';
+	                queryTask.executeForExtent(query, function(result) {
+	                	if (result) {
+	                		//TODO Check if overzoomed and zoom out
+	                		map.setExtent(result.extent.expand(1.1), true);
+	                	}
+	                });
+					/*this.$el.find('.reef_value .fa-info-circle').attr('title', this.config[region].TOOLTIPS.reef_value);
 					this.$el.find('.total_visitation .fa-info-circle').attr('title', this.config[region].TOOLTIPS.total_visitation);
-					this.$el.find('.reef_highest_value .fa-info-circle').attr('title', this.config[region].TOOLTIPS.reef_highest_value);
-
-
+					this.$el.find('.highest_value_reefs .fa-info-circle').attr('title', this.config[region].TOOLTIPS.highest_value_reefs);
+				*/
 				}
-
 				this.$el.find('.stat.reef_value .number .value').html(this.addCommas(this.stats[region].reef_value));
 				this.$el.find('.stat.total_visitation .number .value').html(this.addCommas(this.stats[region].total_visitation_value));
-				this.$el.find('.stat.reef_highest_value .number .value').html(this.addCommas(this.stats[region].higest_value_reefs));
+				this.$el.find('.stat.highest_value_reefs .number .value').html(this.addCommas(this.stats[region].highest_value_reefs));
 				this.$el.find('.stat.reef_area .number .value').html(this.addCommas(this.stats[region].total_reef_area.toFixed(0)));
 				this.$el.find('.stat.reef_area_tourism .number .value').html(this.addCommas(this.stats[region].reefs_tourism_area.toFixed(0)));
 				this.$el.find('.stat.reef_area_tourism .number .percentage').html((this.stats[region].reefs_tourism_area_percent * 100).toFixed(0));
-
-			},
-
-			getExtent: function(xmin, ymin, xmax, ymax) {
-				return new Extent(xmin, ymin, xmax, ymax, new SpatialReference({wkid: 4326})).expand(1.1);
 			},
 
 			renderChart: function() {
