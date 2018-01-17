@@ -75,7 +75,7 @@ define([
 					}
 					return false;
 				}).each(function(layer) {
-					list[layer.name.trim().toLowerCase()] = {
+					list[layer.name.trim().replace(/\./g,'').toLowerCase()] = {
 						"reef_value": layer.subLayerIds[0],
 						"highest_value_reefs": layer.subLayerIds[1],
 						"total_visitation": layer.subLayerIds[2],
@@ -149,7 +149,6 @@ define([
 			},
 
 			render: function() {
-
 				var regions = Object.keys(this.stats).sort();
 
 				this.$el.html(_.template(template)({
@@ -208,6 +207,7 @@ define([
 					this.$el.find('.stats .header .region-label').html(region);
 
 					var query = new Query();
+
                 	var queryTask = new QueryTask(this.regionConfig.service + '/' + this.layerList[region.toLowerCase()].reef_value);
 	                query.where = '1=1';
 	                queryTask.executeForExtent(query, function(result) {
