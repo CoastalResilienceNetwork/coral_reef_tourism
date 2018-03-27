@@ -38,6 +38,7 @@ define([
 
 		return declare(PluginBase, {
 			toolbarName: 'Recreation & Tourism',
+			fullName: 'Recreation & Tourism',
 			resizable: false,
 			width: 425,
 			size: 'custom',
