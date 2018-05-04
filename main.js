@@ -2,6 +2,11 @@ require({
     // Specify library locations.
     packages: [
         {
+        	name: "jquery",
+            location: "//ajax.googleapis.com/ajax/libs/jquery/1.9.0",
+            main: "jquery.min"
+        },
+        {
             name: "d3",
             location: "//d3js.org",
             main: "d3.v3.min"
