@@ -250,7 +250,7 @@
 					<option value="Global" selected>Global</option>
 
 					<% _.each(regions, function(val, key) { if (val !== "Global") {%>
-	    				<option value="<%= val %>"><%= val %></option>
+	    				<option value="<%= val %>" <% if (region === val) { %> selected <%} %>><%= val %></option>
 	    			<% }}); %>
 				</select>
 			</div>
@@ -258,7 +258,7 @@
 
 		<div class="right-side">
 			<label class="form-component" style="display: none;">
-				<input type="checkbox" id="scale-data">
+				<input type="checkbox" id="scale-data" <% if (scaleLock) { %> checked <% } %>>
 				<div class="check"></div>
 				<span class="form-text">Scale data for selected geography</span> 
 			</label>
@@ -267,7 +267,7 @@
 
 	<div class="stats">
 		<div class="header">Quick Stats for <span class="region-label">the World</span></div>
-		<div class="stat active reef_value" data-global-layer=[1] data-layer="reef_value">
+		<div class="stat <% if (stat === 'reef_value') { %> active <% } %> reef_value" data-global-layer=[1] data-layer="reef_value">
 			<div class="stat-info">
 				<span class="fa fa-info-circle" title=""></span>
 			</div>
@@ -277,7 +277,7 @@
 			</div>
 		</div>
 
-		<div class="stat total_visitation" data-global-layer=[3] data-layer="total_visitation">
+		<div class="stat<% if (stat === 'total_visitation') { %> active <% } %> total_visitation" data-global-layer=[3] data-layer="total_visitation">
 			<div class="stat-info">
 				<span class="fa fa-info-circle" title=""></span>
 			</div>
@@ -287,7 +287,7 @@
 			</div>
 		</div>
 
-		<div class="stat highest_value_reefs" data-global-layer=[2] data-layer="highest_value_reefs">
+		<div class="stat <% if (stat === 'highest_value_reefs') { %> active <% } %> highest_value_reefs" data-global-layer=[2] data-layer="highest_value_reefs">
 			<div class="stat-info">
 				<span class="fa fa-info-circle" title=""></span>
 			</div>
