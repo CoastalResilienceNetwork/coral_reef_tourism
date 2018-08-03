@@ -25,6 +25,7 @@ define([
 	'esri/tasks/query',
     'esri/tasks/QueryTask',
     'dojo/dom',
+    './State',
     'dojo/text!./region.json',
     'dojo/text!./template.html',
 	], function(declare,
@@ -37,6 +38,7 @@ define([
 		Query,
         QueryTask,
 		dom,
+		State,
 		RegionConfig,
 		template
 	) {
@@ -51,6 +53,12 @@ define([
 
 			initialize: function(frameworkParameters) {
 				declare.safeMixin(this, frameworkParameters);
+				this.state = new State();
+				// This gets the defaults
+				this.region = this.state.getRegion();
+				this.stat = this.state.getStat();
+				this.scaleLock = this.state.getScaleLock();
+
 				var query = new Query();
 				this.regionConfig = $.parseJSON(RegionConfig);
                 var queryTask = new QueryTask(this.regionConfig.service + '/135');
@@ -90,6 +98,10 @@ define([
 					};
 				});
 				this.layerList = list;
+				this.changeRegion(this.region);
+				if (this.stat === 'on_reef' || this.stat === 'adjacent_reef') {
+					this.selectBarStat(this.stat);
+				}
 			},
 
 			bindEvents: function() {
@@ -104,29 +116,49 @@ define([
 
 				this.$el.find('#chosenRegion').on('change', function(e) {
 					var region = e.target.value;
-					self.updateStats(region);
-					self.updateChartData(region);
-					self.updateLayers();
-
-					if (region === 'Global') {
-						self.$el.find('.right-side .form-component').hide();
-					} else {
-						self.$el.find('.right-side .form-component').show();
-					}
-
+					self.changeRegion(region);
 				});
 
 				this.$el.find('#scale-data').on('change', _.bind(this.updateLayers, this));
 
 			},
 
+			changeRegion: function(region) {
+				this.updateStats(region);
+				this.updateChartData(region);
+				this.updateLayers();
+
+				this.state = this.state.setRegion(region);
+
+				if (region === 'Global') {
+					this.$el.find('.right-side .form-component').hide();
+				} else {
+					this.$el.find('.right-side .form-component').show();
+				}
+			},
+
+			setState: function(data) {
+                this.state = new State(data);
+				this.region = data.region;
+				this.stat = data.stat;
+				this.scaleLock = data.scaleLock;
+            },
+
+            getState: function() {
+                return {
+                    region: this.state.getRegion(),
+                    stat: this.state.getStat(),
+                    scaleLock: this.state.getScaleLock()
+                };
+            },
+
 			activate: function() {
-				this.render();
-
-				// Adjust toolbar title position to make room for image button
-				this.$el.prev('.sidebar-nav').find('.nav-title').css("margin-left", "25px");
-
 				if (!this.layerGlobal) {
+					this.render();
+
+					// Adjust toolbar title position to make room for image button
+					this.$el.prev('.sidebar-nav').find('.nav-title').css("margin-left", "25px");
+
 					this.layerGlobal = new ArcGISDynamicMapServiceLayer(this.regionConfig.service, {
 						id: 'global',
 						maxScale: 500000
@@ -136,12 +168,9 @@ define([
 					
 					this.layerGlobal.setVisibleLayers([1]);
 					this.map.addLayer(this.layerGlobal);
-				} else {
-					this.updateLayers();
-				}
 
-				$('#map-0').append('<div class="zoom-to-far-error">Data not available at this zoom.<br>Please zoom out.</div>');
-			
+					$('#map-0').append('<div class="zoom-to-far-error">Data not available at this zoom.<br>Please zoom out.</div>');
+				}
 			},
 
 			deactivate: function() {
@@ -158,7 +187,10 @@ define([
 				var regions = Object.keys(this.stats).sort();
 
 				this.$el.html(_.template(template)({
-					regions: regions
+					regions: regions,
+					region: this.region,
+					stat: this.stat,
+					scaleLock: this.scaleLock
                 }));
 
                 this.$el.find('#chosenRegion').chosen({
@@ -178,11 +210,7 @@ define([
 					});
 				}).tooltip();
 
-				this.updateStats('Global');
-
                 this.renderChart();
-
-                this.updateChartData('Global');
 
                 this.bindEvents();
 
@@ -194,6 +222,8 @@ define([
 				var region = this.$el.find("#chosenRegion").val();
 				var scaled = this.$el.find("#scale-data").is(":checked");
 				var layer = this.$el.find('.stat.active').attr('data-layer');
+				this.state = this.state.setStat(layer);
+				this.state = this.state.setScaleLock(scaled);
 
 				if (scaled) {
 					layerid = this.layerList[region.toLowerCase()][layer];
@@ -363,23 +393,22 @@ define([
 						.attr("width", x.rangeBand())
 						.attr("height", function(d) { return height - y(d.y); })
 						.on('click', function(d) {
-							self.$el.find('.stats .stat.active').removeClass('active');
-							d3.selectAll('.chart rect.bar.disabled').classed('disabled', false);
-							d3.selectAll('.chart rect.bar.active').classed('active', false);
-							if (d.x === "On Reef") {
-								d3.selectAll('.chart rect.bar.Adjacent-Reef').classed('disabled', true);
-								d3.selectAll('.chart rect.bar.On-Reef').classed('active', true);
-							} else { // Adjacent
-								d3.selectAll('.chart rect.bar.On-Reef').classed('disabled', true);
-								d3.selectAll('.chart rect.bar.Adjacent-Reef').classed('active', true);
-							}
-							self.updateLayers();
+							self.selectBarStat(d.x);
 						});
+			},
 
-				/*$('.chart rect.bar').tooltip({
-					track: true
-				});*/
-
+			selectBarStat: function(stat) {
+				this.$el.find('.stats .stat.active').removeClass('active');
+				d3.selectAll('.chart rect.bar.disabled').classed('disabled', false);
+				d3.selectAll('.chart rect.bar.active').classed('active', false);
+				if (stat === "on_reef" || stat === "On Reef") {
+					d3.selectAll('.chart rect.bar.Adjacent-Reef').classed('disabled', true);
+					d3.selectAll('.chart rect.bar.On-Reef').classed('active', true);
+				} else if (stat === "adjacent_reef" || stat === "Adjacent Reef") {
+					d3.selectAll('.chart rect.bar.On-Reef').classed('disabled', true);
+					d3.selectAll('.chart rect.bar.Adjacent-Reef').classed('active', true);
+				}
+				this.updateLayers();
 			},
 
 			updateChartData: function(region) {
@@ -433,8 +462,6 @@ define([
 					})
 					.attr("y", function(d) { return self.chart.y(d.y); })
 					.attr("height", function(d) { return self.chart.height - self.chart.y(d.y); });
-
-
 			},
 
 			// http://stackoverflow.com/questions/2646385/add-a-thousands-separator-to-a-total-with-javascript-or-jquery
