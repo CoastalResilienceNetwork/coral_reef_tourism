@@ -218,20 +218,30 @@ define([
 			},
 
 			updateLayers: function() {
+				var self = this;
 				var layerid;
 				var region = this.$el.find("#chosenRegion").val();
 				var scaled = this.$el.find("#scale-data").is(":checked");
+				var layers = this.layerList[region.toLowerCase()];
 				var layer = this.$el.find('.stat.active').attr('data-layer');
 				this.state = this.state.setStat(layer);
 				this.state = this.state.setScaleLock(scaled);
 
 				if (scaled) {
-					layerid = this.layerList[region.toLowerCase()][layer];
+					layerid = layers[layer];
 				} else {
 					layerid = this.layerList.global[layer];
 				}
 
 				this.layerGlobal.setVisibleLayers([layerid]);
+
+				_.each(Object.keys(layers), function(key) {
+					var url = 'http://tncmaps.eastus.cloudapp.azure.com/arcgis/rest/services/OceanWealth/Recreation_and_Tourism_2/MapServer/' + layers[key] + '?f=json';
+					jQuery.getJSON(url, '', function(resp) {
+						self.$el.find('.stat.' + key + ' .stat-info span').attr('title', resp.description).tooltip();
+
+					});
+				});
 			},
 
 			updateStats: function(region) {
