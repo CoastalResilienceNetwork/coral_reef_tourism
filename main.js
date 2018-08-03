@@ -238,7 +238,11 @@ define([
 				_.each(Object.keys(layers), function(key) {
 					var url = 'http://tncmaps.eastus.cloudapp.azure.com/arcgis/rest/services/OceanWealth/Recreation_and_Tourism_2/MapServer/' + layers[key] + '?f=json';
 					jQuery.getJSON(url, '', function(resp) {
-						self.$el.find('.stat.' + key + ' .stat-info span').attr('title', resp.description).tooltip();
+						if (key === 'adjacent_reef' || key === 'on_reef') {
+							self.$el.find('.stat[data-layer=' + key + ']').attr('title', resp.description).tooltip();
+						} else {
+							self.$el.find('.stat.' + key + ' .stat-info span').attr('title', resp.description).tooltip();
+						}
 
 					});
 				});
@@ -262,10 +266,6 @@ define([
 	                		map.setExtent(result.extent.expand(1.1), true);
 	                	}
 	                });
-					/*this.$el.find('.reef_value .fa-info-circle').attr('title', this.config[region].TOOLTIPS.reef_value);
-					this.$el.find('.total_visitation .fa-info-circle').attr('title', this.config[region].TOOLTIPS.total_visitation);
-					this.$el.find('.highest_value_reefs .fa-info-circle').attr('title', this.config[region].TOOLTIPS.highest_value_reefs);
-				*/
 				}
 				this.$el.find('.stat.reef_value .number .value').html(this.addCommas(this.stats[region].reef_value));
 				this.$el.find('.stat.total_visitation .number .value').html(this.addCommas(this.stats[region].total_visitation_value));
@@ -392,9 +392,6 @@ define([
 						.attr("class", function(d) {
 							return "stat bar " + d.x.replace(' ', '-');
 						})
-						.attr("title", function(d) {
-							return parseInt(d.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-						})
 						.attr("data-layer", function(d) {
 							return d.x.replace(' ', '_').toLowerCase();
 						})
@@ -467,9 +464,6 @@ define([
 				    .classed('stat', true)
 				    .classed('bar', true)
 				    .transition().duration(1200).ease("sin-in-out")
-					.attr("title", function(d) {
-					    return parseInt(d.y).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-					})
 					.attr("y", function(d) { return self.chart.y(d.y); })
 					.attr("height", function(d) { return self.chart.height - self.chart.y(d.y); });
 			},
