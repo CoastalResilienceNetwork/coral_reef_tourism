@@ -236,7 +236,7 @@ define([
 				this.layerGlobal.setVisibleLayers([layerid]);
 
 				_.each(Object.keys(layers), function(key) {
-					var url = 'http://tncmaps.eastus.cloudapp.azure.com/arcgis/rest/services/OceanWealth/Recreation_and_Tourism_2/MapServer/' + layers[key] + '?f=json';
+					var url = 'https://tncmaps.eastus.cloudapp.azure.com/arcgis/rest/services/OceanWealth/Recreation_and_Tourism_2/MapServer/' + layers[key] + '?f=json';
 					jQuery.getJSON(url, '', function(resp) {
 						if (key === 'adjacent_reef' || key === 'on_reef') {
 							self.$el.find('.stat[data-layer=' + key + ']').attr('title', resp.description).tooltip();
